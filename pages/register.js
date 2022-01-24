@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image"
+import Image from "next/image";
 import { BsCalendarCheck } from "react-icons/bs";
 
 export default function Register() {
@@ -24,56 +24,48 @@ export default function Register() {
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
             type="text"
-            // placeholder="Username"
           />
 
           <p className="font-bold italic pl-2 mb-1">Lastname</p>
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
-            // placeholder="Password"
           />
           <p className="font-bold italic pl-2 mb-1">Nickname</p>
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
-            // placeholder="Password"
           />
           <p className="font-bold italic pl-2 mb-1">Tel</p>
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
-            // placeholder="Password"
           />
           <p className="font-bold italic pl-2 mb-1">Position</p>
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
-            // placeholder="Password"
           />
           <p className="font-bold italic pl-2 mb-1">Email</p>
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
-            // placeholder="Password"
           />
           <p className="font-bold italic pl-2 mb-1">Password</p>
           <input
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
-            // placeholder="Password"
           />
           <button className="w-full bg-cyan-500   text-white shadow-lg  p-3 rounded-lg">
             <span className=" text-center "> Submit </span>
           </button>
 
-          <div className=" text-center"> 
-            <span className=" text-blue-700 text-center">Already have an account sign in ?</span>
-            </div>
-          
+          <div className=" text-center">
+            <span className=" text-blue-700 text-center">
+              Already have an account sign in ?
+            </span>
+          </div>
         </form>
-        
-
       </div>
     </div>
   );
