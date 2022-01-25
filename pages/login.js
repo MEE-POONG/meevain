@@ -3,7 +3,7 @@ import { BsCalendarCheck } from "react-icons/bs";
 
 export default function Login() {
   return (
-    <div className="container bg-sky-50 h-screen">
+    <div className="bg-sky-50 h-screen">
       <div className=" mx-auto max-w-lg ">
         <div className=" text-center py-8 text-blue-600 text-2xl font-bold italic flex justify-center">
             <div className="text-blue-600 bg-white shadow-xl p-2 rounded-xl m-2"><BsCalendarCheck size={50}/></div>
