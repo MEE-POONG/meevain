@@ -1,11 +1,9 @@
 import Image from 'next/image';
 import { MdGroupAdd, MdOutlineCancel } from "react-icons/md";
 import React from "react";
-import { useRouter } from "next/router";
 
 export default function Home() {
     const [showModalfood, setShowModal] = React.useState(false);
-    const router = useRouter();
     return (
         <div className="bg-sky-50 h-screen ">
             <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
@@ -19,18 +17,14 @@ export default function Home() {
                             />
                         </div>
                         <div className="col-span-6 px-2 mt-2 text-2xl font-bold text-black">บาสสส</div>
-                        <div className="col-span-1 mt-2 font-bold float-right" type="button" onClick={() => setShowModal(true)}><MdGroupAdd size={36} color="black" /></div>
+                        <div className="col-span-1 mt-2 font-bold float-right" type="button" onClick={() => setShowModal(true)}><MdGroupAdd size={36} color="black"/></div>
                     </div>
                 </div>
             </div>
             <p className="py-7 font-bold text-2xl text-center text-shadow-xl">Group All</p>
             <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
                 <div className="max-w-md w-full space-y-8 ">
-                    <div className="rounded-2xl shadow-lg bg-green-200"
-                        type="button"
-                        onClick={() => {
-                            router.push("/status");
-                        }}>
+                    <div className="rounded-2xl shadow-lg bg-green-200">
                         <div className="grid grid-cols-8 px-3 py-3">
                             <Image
                                 src="/images/emo.png"
@@ -44,11 +38,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-2xl shadow-lg text-white bg-cyan-200"
-                        type="button"
-                        onClick={() => {
-                            router.push("/status");
-                        }}>
+                    <div className="rounded-2xl shadow-lg text-white bg-cyan-200">
                         <div className="grid grid-cols-8 px-3 py-3">
                             <Image
                                 src="/images/emo.png"
