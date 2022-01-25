@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import { BsCalendarCheck } from "react-icons/bs";
 
 export default function Login() {
@@ -7,8 +8,12 @@ export default function Login() {
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-md w-full space-y-8 ">
           <div className=" text-center py-8 text-blue-600 text-2xl font-bold italic flex justify-center">
-            <div className="text-blue-600 bg-white shadow-xl p-2 rounded-xl m-2"><BsCalendarCheck size={50} /></div>
-            <span className=" mt-6 text-shadow-lg ">Mee Vain</span>
+              <Image 
+              src="/images/logo.png"
+              width={50}
+              height={50}
+              />
+            <span className=" mt-3 px-5 text-3xl">Mee Vain</span>
           </div>
 
           <form className="">
