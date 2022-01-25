@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoPersonCircleOutline } from "react-icons/io5";
 
 import { FiHeart } from "react-icons/fi";
-import { FaRegComment } from "react-icons/fa";
+import { FaRegComment } from "react-icons/fa";    
 // import Home from '../pages/home.js'
 
 export default function Status() {
