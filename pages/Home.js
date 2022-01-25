@@ -3,7 +3,7 @@ import { MdGroupAdd, MdOutlineCancel } from "react-icons/md";
 import React from "react";
 
 export default function Home() {
-    const [showModalfood, setShowModal] = React.useState(false);
+    const [showModal, setShowModal] = React.useState(false);
     return (
         <div className="bg-sky-50 h-screen ">
             <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
@@ -58,7 +58,7 @@ export default function Home() {
                     </button>
                 </div>
             </div>
-            {showModalfood ? (
+            {showModal ? (
                 <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
                     <div className="w-full  max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
                         <MdOutlineCancel size={24} className="float-right cursor-pointer hover:shadow-2xl hover:scale-105 transform transition-all duration-500" type="button"
