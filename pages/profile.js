@@ -2,10 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { MdGroupAdd, MdOutlineCancel } from "react-icons/md";
 import { FaUserPlus, FaUser } from "react-icons/fa";
+import  Navbar from '../components/Navbar'
 
 export default function Profile() {
     return (
-        <div className="bg-sky-50 h-screen ">
+        <div className="bg-sky-100 h-screen ">
             <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
                 <div className="mx-auto max-w-lg">
                     <div className="grid grid-cols-8 ">
@@ -23,6 +24,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
+            <Navbar/>
         </div>
     );
 }

@@ -2,12 +2,13 @@ import Image from 'next/image';
 import { MdGroupAdd, MdOutlineCancel } from "react-icons/md";
 import React from "react";
 import { useRouter } from "next/router";
+import  Navbar from '../components/Navbar'
 
 export default function Home() {
     const [showModalfood, setShowModal] = React.useState(false);
     const router = useRouter();
     return (
-        <div className="bg-sky-50 h-screen ">
+        <div className="bg-sky-100 h-screen ">
             <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
                 <div className="mx-auto max-w-lg">
                     <div className="grid grid-cols-8 ">
@@ -89,6 +90,7 @@ export default function Home() {
                     </div>
                 </div>
             ) : null}{" "}
+            <Navbar/>
         </div>
     );
 }

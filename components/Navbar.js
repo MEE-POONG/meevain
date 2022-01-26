@@ -11,7 +11,7 @@ function Navbar() {
             className={`list ${activeList === 0 ? "active" : ""}  `}
             onClick={() => setActiveList(0)}
           >
-            <a href="#">
+            <a href="/home">
               <span className="icon  ">
                 <ion-icon name="home-outline"></ion-icon>
               </span>
@@ -22,7 +22,7 @@ function Navbar() {
             className={`list ${activeList == 1 ? "active" : ""}  `}
             onClick={() => setActiveList(1)}
           >
-            <a href="#">
+            <a href="/Calender">
               <span className="icon">
                 <ion-icon name="calendar-outline"></ion-icon>
               </span>
@@ -33,7 +33,7 @@ function Navbar() {
             className={`list ${activeList == 2 ? "active" : ""}  `}
             onClick={() => setActiveList(2)}
           >
-            <a href="#">
+            <a href="/Calculator">
               <span className="icon">
                 <ion-icon name="calculator-outline"></ion-icon>
               </span>
@@ -44,7 +44,7 @@ function Navbar() {
             className={`list ${activeList == 3 ? "active" : ""}  `}
             onClick={() => setActiveList(3)}
           >
-            <a href="#">
+            <a href="/profile">
               <span className="icon">
                 <ion-icon name="person-outline"></ion-icon>
               </span>
