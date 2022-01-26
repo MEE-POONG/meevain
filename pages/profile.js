@@ -1,30 +1,43 @@
-import React from 'react';
-import Image from 'next/image';
-import { MdGroupAdd, MdOutlineCancel } from "react-icons/md";
-import { FaUserPlus, FaUser } from "react-icons/fa";
-import  Navbar from '../components/Navbar'
+import React from "react";
+import Top from "../components/top";
+import Image from "next/image";
+import { HiOutlinePencilAlt } from "react-icons/hi";
+import Navbar from "../components/Navbar";
 
 export default function Profile() {
-    return (
-        <div className="bg-sky-100 h-screen ">
-            <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
-                <div className="mx-auto max-w-lg">
-                    <div className="grid grid-cols-8 ">
-                        <div className="col-span-1 mt-1">
-                            <Image
-                                src="/images/emo.png"
-                                width={40}
-                                height={40}
-                            />
-                        </div>
-                        <div className="col-span-4 px-2 mt-2 text-2xl font-bold text-black">บาสสส</div>
-                        <div className="col-span-1 mt-2 font-bold float-right" type="button"><FaUserPlus size={36} color="black" className="float-right"/></div>
-                        <div className="col-span-1 float-right mt-3 font-bold text-center" type="button"><FaUser size={29} color="black" className="float-right"/></div>
-                        <div className="col-span-1 mt-3 font-bold text-2xl text-black" >100</div>
-                    </div>
-                </div>
-            </div>
-            <Navbar/>
+  return (
+    <div className="bg-sky-100 h-screen ">
+      <Top />
+      <div className=" mx-auto max-w-lg ">
+        <div className=" flex justify-center mx-auto  w-2/5 mt-10  ">
+          <Image
+            src="/Emoji_Icon_-_Smiling_large.png"
+            width={80}
+            height={80}
+            className="rounded-full z-0 inline-block border-2 border-gray-500"
+          />
         </div>
-    );
+        <div className="text-center mt-2">บาสน้อยหอยสัง</div>
+        <div>
+          <HiOutlinePencilAlt
+            size={40}
+            color=""
+            className=" ml-2 py-2 float-right"
+            type="button"
+          />
+        </div>
+        <form className=" m-6 mb-8">
+          <p className="font-bold italic pl-2 mb-1">Firstname</p>
+          <p className="font-bold italic pl-2 mb-1">Lastname</p>
+          <p className="font-bold italic pl-2 mb-1">Nickname</p>
+          <p className="font-bold italic pl-2 mb-1">Tel</p>
+
+          <button className="w-full bg-cyan-500   text-white shadow-lg  p-3 rounded-lg">
+            <span className=" text-center "> Submit </span>
+          </button>
+        </form>
+      </div>
+<Navbar/>
+    </div>
+  );
 }
