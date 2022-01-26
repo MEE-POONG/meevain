@@ -55,6 +55,7 @@ export default function Login() {
               <button className="w-full bg-black text-white shadow-lg  p-3 rounded-lg">
                 <span className="text-l text-center "> Sign in with apple </span>
               </button>
+              
             </div>
           </form>
         </div>

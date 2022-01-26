@@ -1,8 +1,9 @@
 import React from "react";
 import Top from "../components/top";
 import Image from "next/image";
-import { HiOutlinePencilAlt } from "react-icons/hi";
+import { FiLogIn } from "react-icons/fi";
 import Navbar from "../components/Navbar";
+import Modaleditproflie from "../components/modaleditproflie";
 
 export default function Profile() {
   return (
@@ -18,26 +19,43 @@ export default function Profile() {
           />
         </div>
         <div className="text-center mt-2">บาสน้อยหอยสัง</div>
-        <div>
-          <HiOutlinePencilAlt
-            size={40}
-            color=""
-            className=" ml-2 py-2 float-right"
-            type="button"
-          />
-        </div>
-        <form className=" m-6 mb-8">
-          <p className="font-bold italic pl-2 mb-1">Firstname</p>
-          <p className="font-bold italic pl-2 mb-1">Lastname</p>
-          <p className="font-bold italic pl-2 mb-1">Nickname</p>
-          <p className="font-bold italic pl-2 mb-1">Tel</p>
+        <Modaleditproflie />
 
-          <button className="w-full bg-cyan-500   text-white shadow-lg  p-3 rounded-lg">
-            <span className=" text-center "> Submit </span>
-          </button>
-        </form>
+        <div className="mt-10 m-6 mb-8">
+          <div className="grid grid-cols-2">
+            <p className="col-span-1 font-bold italic pl-2 py-3">Firstname</p>
+            <p className="col-span-1 font-bold italic pl-2 py-3">เจมส์</p>
+          </div>
+          <div className=" h-0.5 bg-gray-400"></div>
+          <div className="grid grid-cols-2">
+            <p className="col-span-1 font-bold italic pl-2 py-3">Lastname</p>
+            <p className="col-span-1 font-bold italic pl-2 py-3">หมา</p>
+          </div>
+          <div className=" h-0.5 bg-gray-400"></div>
+          <div className="grid grid-cols-2">
+            <p className="col-span-1 font-bold italic pl-2 py-3">Nickname</p>
+            <p className="col-span-1 font-bold italic pl-2 py-3">หมาเจม</p>
+          </div>
+          <div className=" h-0.5 bg-gray-400"></div>
+          <div className="grid grid-cols-2">
+            <p className="col-span-1 font-bold italic pl-2 py-3">Tel</p>
+            <p className="col-span-1 font-bold italic pl-2 py-3">1234667989</p>
+          </div>
+          <div className=" h-0.5 bg-gray-400"></div>
+          <div className="grid grid-cols-2">
+            <p className="col-span-1 font-bold italic pl-2 py-3">Position</p>
+            <p className="col-span-1 font-bold italic pl-2 py-3">manager</p>
+          </div>
+          <div className=" h-0.5 bg-gray-400"></div>
+          <div className=" flex py-3">
+            <FiLogIn size={25} />
+            <span className=" text-center px-2 "> Sign out </span>
+          </div>
+          <div className=" h-0.5 bg-gray-400"></div>
+
+        </div>
       </div>
-<Navbar/>
+      <Navbar />
     </div>
   );
 }
