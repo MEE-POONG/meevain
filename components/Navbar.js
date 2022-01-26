@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { navActiveState } from '/context/navigation';
-import { useRecoilState } from 'recoil';
+import { navActiveState } from "/context/navigation";
+import { useRecoilState } from "recoil";
 
 function Navbar() {
   const [activeList, setActiveList] = useRecoilState(navActiveState);
