@@ -7,8 +7,8 @@ export default function Top() {
     const [showModaladd, setShowModaladd] = React.useState(false);
     const [showModaluser, setShowModaluser] = React.useState(false);
     return (
-        <div className="bg-sky-50 h-screen ">
-            <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
+        <div className=""> {/*bg-sky-50 h-screen  */} 
+            <div className="py-2 px-5 w-full shadow-2xl bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
                 <div className="mx-auto max-w-lg">
                     <div className="grid grid-cols-8 ">
                         <div className="col-span-1 mt-1">
