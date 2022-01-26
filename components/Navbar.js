@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { navActiveState } from '/context/navigation';
+import { useRecoilState } from 'recoil';
 
 function Navbar() {
-  const [activeList, setActiveList] = useState(0);
+  const [activeList, setActiveList] = useRecoilState(navActiveState);
+  // const [activeList, setActiveList] = useState();
   console.log(activeList);
   return (
     <body className="block fixed inset-x-0 bottom-0 z-10">
@@ -11,7 +14,7 @@ function Navbar() {
             className={`list ${activeList === 0 ? "active" : ""}  `}
             onClick={() => setActiveList(0)}
           >
-            <a href="/home">
+            <a href="/Home">
               <span className="icon  ">
                 <ion-icon name="home-outline"></ion-icon>
               </span>

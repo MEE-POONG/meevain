@@ -6,6 +6,7 @@ import  Navbar from '../components/Navbar'
 
 export default function Home() {
     const [showModal, setShowModal] = React.useState(false);
+ 
     const router = useRouter();
     return (
         <div className="bg-sky-100 h-screen ">
