@@ -11,7 +11,7 @@ export default function Profile() {
       <div className=" mx-auto max-w-lg ">
         <div className=" flex justify-center mx-auto  w-2/5 mt-10  ">
           <Image
-            src="/Emoji_Icon_-_Smiling_large.png"
+            src="/images/userprofile-01.webp"
             width={80}
             height={80}
             className="rounded-full z-0 inline-block border-2 border-gray-500"

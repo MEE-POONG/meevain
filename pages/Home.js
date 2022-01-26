@@ -3,28 +3,14 @@ import { MdGroupAdd, MdOutlineCancel } from "react-icons/md";
 import React from "react";
 import { useRouter } from "next/router";
 import  Navbar from '../components/Navbar'
+import Top from "../components/top";
 
 export default function Home() {
     const [showModal, setShowModal] = React.useState(false);
- 
     const router = useRouter();
     return (
         <div className="bg-sky-100 h-screen ">
-            <div className="py-2 px-5 w-full bg-gradient-to-r from-cyan-600 to-cyan-300 text-white " role="alert">
-                <div className="mx-auto max-w-lg">
-                    <div className="grid grid-cols-8 ">
-                        <div className="col-span-1 mt-1">
-                            <Image
-                                src="/images/emo.png"
-                                width={40}
-                                height={40}
-                            />
-                        </div>
-                        <div className="col-span-6 px-2 mt-2 text-2xl font-bold text-black">บาสสส</div>
-                        <div className="col-span-1 mt-2 font-bold float-right" type="button" onClick={() => setShowModal(true)}><MdGroupAdd size={36} color="black" /></div>
-                    </div>
-                </div>
-            </div>
+                 <Top />
             <p className="py-7 font-bold text-2xl text-center text-shadow-xl">Group All</p>
             <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
                 <div className="max-w-md w-full space-y-8 ">

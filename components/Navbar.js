@@ -14,7 +14,7 @@ function Navbar() {
             className={`list ${activeList === 0 ? "active" : ""}  `}
             onClick={() => setActiveList(0)}
           >
-            <a href="/Home">
+            <a href="/home">
               <span className="icon  ">
                 <ion-icon name="home-outline"></ion-icon>
               </span>
