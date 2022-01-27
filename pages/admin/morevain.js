@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { BsCalendarCheck } from "react-icons/bs";
 import NavbarAdmin from "../../components/NavbarAdmin";
+import TopAd from "../../components/topAd";
 
 import TableVain from "../../components/tableVain";
 
@@ -9,6 +10,7 @@ export default function Morevain() {
   return (
     <div>
       <div className=" bg-sky-100 min-h-screen">
+        <TopAd/>
         <div className=" mx-auto max-w-lg ">
           <div className="">
             <form className=" mx-4 m-6">
