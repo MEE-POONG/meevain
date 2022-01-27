@@ -36,7 +36,7 @@ export default function Profile() {
 
   return (
     <div className="bg-sky-100  min-h-screen ">
-      <TopAd/>
+      <TopAd/>d
       <div className="mt-4 mx-auto  max-w-md px-4  ">
         <div className="text-sm   font-extrabold">เลือกเวร</div>
         <div className="w-full">
@@ -196,7 +196,7 @@ export default function Profile() {
       <div className="flex justify-center mt-4 mx-auto  max-w-md   ">
      <TableRandom/>
       </div>
-      <NavbarAdmin/>
+      {/* <NavbarAdmin/> */}
     </div>
   );
 }

@@ -183,7 +183,7 @@ function Manage() {
         </LocalizationProvider>
       </div>
       <div className="mt-4 mx-auto  max-w-md flex justify-center  ">
-        <button className="p-3 mt-6  bg-sky-600 text-white rounded-xl hover:bg-sky-400 shadow-xl w-full">
+        <button className="p-3 mt-6 mx-6  bg-sky-600 text-white rounded-xl hover:bg-sky-400 shadow-xl w-full">
           สุ่มเวร
         </button>
       </div>
