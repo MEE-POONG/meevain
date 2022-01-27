@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
+import NavbarAdmin from "../../components/NavbarAdmin";
 
 const activated = [
   { name: "เช้า" },
@@ -186,6 +187,7 @@ function Manage() {
           สุ่มเวร
         </button>
       </div>
+      <NavbarAdmin/>
     </div>
   );
 }
