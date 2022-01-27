@@ -1,10 +1,13 @@
 import React from 'react';
-import ModalCreateGroup from '../components/modalCreateGroup';
+import TableVain from '../components/tableVain';
+// import TopPageAdmin from '../components/topPageAdmin';
+
+
 
 export default function Testmodal() {
   return (
     <div>
-        <ModalCreateGroup/>
+        <TableVain/>
     </div>
   );
 }
