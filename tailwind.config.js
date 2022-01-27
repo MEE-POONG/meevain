@@ -6,6 +6,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    require('tailwindcss-textshadow')]
-}
+  plugins: [require("tailwindcss-textshadow")],
+};
