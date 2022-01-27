@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaUserPlus, FaUser } from "react-icons/fa";
+// import { FaUserPlus, FaUser } from "react-icons/fa";
 // import NavbarAdmin from "../../components/NavbarAdmin";
 // import { HiOutlineDotsVertical } from "react-icons/hi";
 import ModalIconLogout from "../../components/modalIconLogout";
