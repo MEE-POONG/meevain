@@ -8,6 +8,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import Box from "@mui/material/Box";
 import TopAd from "../../components/topAd";
+import TableRandom from "../../components/tableRandom";
 
 const activated = [
   { name: "เช้า" },
@@ -16,7 +17,7 @@ const activated = [
   { name: "บ่ายดึก" },
   { name: "ดึก" },
   { name: "ดึกเช้า" },
-  { name: "พิเศษ" },
+  { name: "ทำโอ" },
 ];
 const people = [
   { name: "BAZZ" },
@@ -33,7 +34,7 @@ export default function Profile() {
   const [value, setValue] = React.useState([null, null]);
 
   return (
-    <div className="bg-sky-100 h-screen  ">
+    <div className="bg-sky-100  min-h-screen ">
       <TopAd/>
       <div className="mt-4 mx-auto  max-w-md px-4  ">
         <div className="text-sm   font-extrabold">เลือกเวร</div>
@@ -191,8 +192,8 @@ export default function Profile() {
       <div className="mt-4 mx-auto  max-w-md flex justify-center  ">
           <button className="p-2 bg-cyan-400 text-white rounded-xl hover:bg-cyan-500 shadow-xl w-1/2">สุ่มเวร</button>
       </div>
-      <div className="mt-4 mx-auto  max-w-md px-4   ">
-     
+      <div className="flex justify-center mt-4 mx-auto  max-w-md   ">
+     <TableRandom/>
       </div>
     </div>
   );

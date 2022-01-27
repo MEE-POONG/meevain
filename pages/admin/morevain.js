@@ -8,7 +8,7 @@ export default function Morevain() {
   return (
     <div>
          
-      <div className=" bg-sky-50 h-full">
+      <div className=" bg-sky-50 min-h-screen">
         <div className=" mx-auto max-w-lg ">
           <div className="">
           <form className=" mx-4 m-6">
