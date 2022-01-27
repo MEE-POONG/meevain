@@ -3,15 +3,17 @@ import Image from "next/image";
 import { BsCalendarCheck } from "react-icons/bs";
 
 import TableVain from "../../components/tableVain";
+import TopPageAdmin from "../../components/topPageAdmin";
 
 export default function Morevain() {
   return (
     <div>
+      <TopPageAdmin/>
          
       <div className=" bg-sky-50 h-full">
         <div className=" mx-auto max-w-lg ">
           <div className="">
-          <form className=" mx-4 m-6">
+          <form className="">
             <p className="font-bold italic pl-2 mb-1">ชื่อเวร</p>
             <input
               className=" w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "

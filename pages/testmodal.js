@@ -1,6 +1,5 @@
 import React from 'react';
 import TableVain from '../components/tableVain';
-// import TopPageAdmin from '../components/topPageAdmin';
 
 
 

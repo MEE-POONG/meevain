@@ -88,7 +88,7 @@ function ModalCreateGroup() {
                 </>
               )}
             </Disclosure>
-            <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg mb-8">
+            <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg">
               <span className="text-l text-center"> Create </span>
             </button>
           </div>
