@@ -16,7 +16,7 @@ function NavbarAdmin() {
           >
             <a href="../admin/Calender">
               <span className="icon">
-                <ion-icon name="calendar-outline"></ion-icon>
+                <ion-icon name="calendar-number-outline"></ion-icon>
               </span>
               <span className="text">Calender</span>
             </a>
@@ -39,7 +39,8 @@ function NavbarAdmin() {
           >
             <a href="../admin/morevain">
               <span className="icon">
-                <ion-icon name="calculator-outline"></ion-icon>
+            
+              <ion-icon name="calendar-outline"></ion-icon>
               </span>
               <span className="text">CreateJob</span>
             </a>
