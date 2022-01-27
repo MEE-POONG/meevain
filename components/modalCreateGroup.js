@@ -41,6 +41,55 @@ function ModalCreateGroup() {
               type="text"
               placeholder="Name Group"
             />
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex justify-between px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+                    <span>Group color</span>
+                    <ChevronUpIcon
+                      className={`${
+                        open ? "transform rotate-180" : ""
+                      } w-5 h-5 text-blue-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="px-4 pt-2 pb-2 ">
+                    <div className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between">
+                      <button
+                        className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
+                        type="button"
+                      ></button>
+                      <button
+                        className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                        type="button"
+                      ></button>
+                      <button
+                        className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                        type="button"
+                      ></button>
+                      <button
+                        className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                        type="button"
+                      ></button>
+                      <button
+                        className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                        type="button"
+                      ></button>
+                      <button
+                        className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                        type="button"
+                      ></button>
+                      <button
+                        className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                        type="button"
+                      ></button>
+                    </div>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+            <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg">
+              <span className="text-l text-center"> Create </span>
+            </button>
           </div>
         </div>
       ) : null}{" "}
