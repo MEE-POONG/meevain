@@ -4,7 +4,7 @@ import { BsCalendarCheck } from "react-icons/bs";
 
 export default function Register() {
   return (
-    <div className=" bg-sky-50 min-h-full pb-5">
+    <div className=" bg-sky-50 min-h-screen pb-5">
       <div className=" mx-auto max-w-lg ">
         <div className=" text-center py-2 text-blue-600 text-2xl font-bold italic flex justify-center">
           <div className="text-blue-600 bg-white shadow-xl p-2 rounded-xl m-2">

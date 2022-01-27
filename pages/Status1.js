@@ -9,7 +9,7 @@ import { FaRegComment } from "react-icons/fa"
 export default function Status1() {
     const [count1, setCount1] = useState();
   return (
-    <div className="bg-sky-100 h-screen ">
+    <div className="bg-sky-100 min-h-screen ">
       <Top />
       <div className=" mx-auto max-w-lg ">
         <div className=" text-center m-4">

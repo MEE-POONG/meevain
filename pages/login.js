@@ -4,7 +4,7 @@ import { BsCalendarCheck } from "react-icons/bs";
 
 export default function Login() {
   return (
-    <div className="bg-sky-50 h-screen">
+    <div className="bg-sky-50 min-h-screen">
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-md w-full space-y-8 ">
           <div className=" text-center py-8 text-blue-600 text-2xl font-bold italic flex justify-center">

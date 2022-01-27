@@ -4,7 +4,7 @@ import Top from "../components/top";
 
 function Calculator() {
   return (
-    <div className="bg-sky-100 h-screen ">
+    <div className="bg-sky-100 min-h-screen ">
       <Top />
       <div className="w-screen  mt-2 text-center px-5 min-h-lg ">
         <div className="text-2xl font-bold mt-6 mb-4">สรุปรายได้ประจำเดือน</div>

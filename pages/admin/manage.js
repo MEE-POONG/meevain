@@ -1,15 +1,11 @@
-import React, { Fragment, useState } from "react";
-import Image from "next/image";
+import React, { useState, Fragment } from "react";
+import TopAd from "../../components/topAd";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import TextField from "@mui/material/TextField";
-import DateRangePicker from "@mui/lab/DateRangePicker";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import Box from "@mui/material/Box";
-import TopAd from "../../components/topAd";
-import TableRandom from "../../components/tableRandom";
-import NavbarAdmin from "../../components/NavbarAdmin";
+import DatePicker from "@mui/lab/DatePicker";
 
 const activated = [
   { name: "เช้า" },
@@ -29,21 +25,22 @@ const people = [
   { name: "PIYA" },
 ];
 
-export default function Profile() {
-  const [job, setJob] = useState(activated[0]);
+function Manage() {
+  const [jobName, setJobName] = useState(activated[0]);
   const [peoples, SetPeoples] = useState(people[0]);
-  const [value, setValue] = useState([null, null]);
+  const [value, setValue] = React.useState(null);
 
   return (
     <div className="bg-sky-100  min-h-screen ">
-      <TopAd/>
+      <TopAd />
+
       <div className="mt-4 mx-auto  max-w-md px-4  ">
-        <div className="text-sm   font-extrabold">เลือกเวร</div>
+        <div className="text-sm   font-extrabold">ชื่อเวร</div>
         <div className="w-full">
-          <Listbox value={job} onChange={setJob}>
+          <Listbox value={jobName} onChange={setJobName}>
             <div className="relative mt-1">
               <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
-                <span className="block truncate">{job.name}</span>
+                <span className="block truncate">{jobName.name}</span>
                 <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                   <SelectorIcon
                     className="w-5 h-5 text-gray-400"
@@ -169,34 +166,28 @@ export default function Profile() {
           </Listbox>
         </div>
       </div>
-
-      <div className="mt-4 mx-auto  max-w-md px-4    ">
-          <div className="mb-3 font-extrabold ">วันที่เริ่ม - วันสิ้นสุด </div>
-        <LocalizationProvider  className=" " dateAdapter={AdapterDateFns}>
-          <DateRangePicker
-            startText="ว/ด/ป"
-            endText="ว/ด/ป"
+      <div className="mt-6 mx-auto  max-w-md px-4    ">
+        <div className="text-md font-bold mb-4">วันที่</div>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+            label="ว/ด/ป"
             value={value}
             onChange={(newValue) => {
               setValue(newValue);
             }}
-            renderInput={(startProps, endProps) => (
-              <React.Fragment>
-                <TextField className="bg-white shadow-lg" {...startProps} />
-                <Box sx={{ mx: 2 }}> ถึง </Box>
-                <TextField className="bg-white shadow-lg" {...endProps} />
-              </React.Fragment>
+            renderInput={(params) => (
+              <TextField className="bg-white shadow-lg w-full" {...params} />
             )}
           />
         </LocalizationProvider>
       </div>
       <div className="mt-4 mx-auto  max-w-md flex justify-center  ">
-          <button className="p-2 bg-cyan-400 text-white rounded-xl hover:bg-cyan-500 shadow-xl w-1/2">สุ่มเวร</button>
+        <button className="p-3 mt-6  bg-sky-600 text-white rounded-xl hover:bg-sky-400 shadow-xl w-full">
+          สุ่มเวร
+        </button>
       </div>
-      <div className="flex justify-center mt-4 mx-auto  max-w-md   ">
-     <TableRandom/>
-      </div>
-      <NavbarAdmin/>
     </div>
   );
 }
+
+export default Manage;

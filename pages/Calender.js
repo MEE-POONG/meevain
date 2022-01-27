@@ -9,7 +9,7 @@ function Calender() {
   const [showModalVain, setShowModalVain] = useState();
   const [value, onChange, onClickDay] = useState(new Date());
   return (
-    <div className="bg-sky-100 h-screen ">
+    <div className="bg-sky-100 min-h-screen ">
       <Top />
 
       <div className="flex justify-center h-full   ">

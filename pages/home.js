@@ -9,7 +9,7 @@ export default function Home() {
     const [showModal, setShowModal] = React.useState(false);
     const router = useRouter();
     return (
-        <div className="bg-sky-100 h-screen ">
+        <div className="bg-sky-100 min-h-screen ">
                  <Top />
             <p className="py-7 font-bold text-2xl text-center text-shadow-xl">Group All</p>
             <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">

@@ -7,7 +7,7 @@ import Modaleditproflie from "../components/modaleditproflie";
 
 export default function Profile() {
   return (
-    <div className="bg-sky-100 h-screen ">
+    <div className="bg-sky-100 min-h-screen ">
       <Top />
       <div className=" mx-auto max-w-lg ">
         <div className=" flex justify-center mx-auto  w-2/5 mt-10  ">
