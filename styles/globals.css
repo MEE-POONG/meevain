@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&family=Mali:ital,wght@0,500;0,600;1,700&display=swap");
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -214,8 +213,6 @@ a {
   background-color: #ffffff;
   text-align: center;
   line-height: 40px;
- 
- 
 }
 .react-calendar__tile:disabled {
   background-color: #f0f0f0;
@@ -254,4 +251,18 @@ a {
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
   border-radius: 10px;
+}
+
+.today {
+  color: rgb(255, 255, 255);
+  background-color: rgb(59, 115, 236);
+}
+.selected {
+  color: #ffffff;
+  background-color: #4b42b6;
+}
+
+.before {
+  color: #62676b;
+  opacity: 40%;
 }
