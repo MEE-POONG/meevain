@@ -7,7 +7,7 @@ function Navbar() {
   // const [activeList, setActiveList] = useState();
   console.log(activeList);
   return (
-    <body className="block fixed inset-x-0 bottom-0 z-10">
+    <body className="fixed bottom-0 z-10 mt-12">
       <nav className="navigation shadow-2xl">
         <ul>
           <li

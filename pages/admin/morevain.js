@@ -9,7 +9,7 @@ import TableVain from "../../components/tableVain";
 export default function Morevain() {
   return (
     <div>
-      <div className=" bg-sky-100 min-h-screen">
+      <div className=" bg-sky-100 min-h-screen ">
         <TopAd/>
         <div className=" mx-auto max-w-lg ">
           <div className="">
@@ -53,7 +53,7 @@ export default function Morevain() {
           </div>
         </div>
       </div>
-      <NavbarAdmin />
+      {/* <NavbarAdmin /> */}
     </div>
   );
 }

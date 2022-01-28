@@ -7,10 +7,10 @@ function NavbarAdmin() {
   // const [activeList, setActiveList] = useState();
   console.log(activeList);
   return (
-    <body className="block fixed inset-x-0 bottom-0 z-10">
+    <body className=" fixed inset-x-0 bottom-0 z-10">
       <nav className="navigation shadow-2xl">
         <ul>
-        <li
+          <li
             className={`list ${activeList == 1 ? "active" : ""}  `}
             onClick={() => setActiveList(1)}
           >
@@ -32,15 +32,14 @@ function NavbarAdmin() {
               <span className="text">Home</span>
             </a>
           </li>
-         
+
           <li
             className={`list ${activeList == 2 ? "active" : ""}  `}
             onClick={() => setActiveList(2)}
           >
             <a href="../admin/morevain">
               <span className="icon">
-            
-              <ion-icon name="calendar-outline"></ion-icon>
+                <ion-icon name="calendar-outline"></ion-icon>
               </span>
               <span className="text">CreateJob</span>
             </a>
