@@ -1,8 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { BsCalendarCheck } from "react-icons/bs";
+import { route } from "next/dist/server/router";
+import { useRouter } from "next/router";
 
 export default function Register() {
+  const router = useRouter();
   return (
     <div className=" bg-sky-50 min-h-screen pb-5">
       <div className=" mx-auto max-w-lg ">
@@ -13,11 +16,7 @@ export default function Register() {
           <span className=" mt-6 text-shadow-lg ">Register</span>
         </div>
         <div className=" flex justify-center mt-4">
-          <Image
-            src="/images/userprofile-01.webp"
-            width={200}
-            height={200}
-          />
+          <Image src="/images/userprofile-01.webp" width={200} height={200} />
         </div>
         <form className=" mx-4">
           <p className="font-bold italic pl-2 mb-1">Firstname</p>
@@ -55,12 +54,24 @@ export default function Register() {
             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
             type="text"
           />
-          <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg">
-              <span className="text-l text-center "> Submit </span>
-            </button>
+          <button
+            className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
+            type="button"
+            onClick={() => {
+              router.push("/login");
+            }}
+          >
+            <span className="text-l text-center "> Submit </span>
+          </button>
 
           <div className=" text-center m-2">
-            <span className=" text-blue-700 text-center">
+            <span
+              className=" text-blue-700 text-center"
+              type="button"
+              onClick={() => {
+                router.push("/login");
+              }}
+            >
               Already have an account sign in ?
             </span>
           </div>

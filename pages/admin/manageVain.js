@@ -4,6 +4,7 @@ import ModalCreateGroup from "../../components/modalCreateGroup";
 import Image from "next/image";
 import ModalDeletepersonByGroup from "../../components/modalDeletepersonByGroup";
 import Home from "../home";
+import Status1 from '../../pages/Status1'
 
 export default function ManageVain() {
   return (
@@ -14,7 +15,7 @@ export default function ManageVain() {
             <div className="col-span-1 mt-1">
               <Image src="/images/userprofile-01.webp" width={40} height={40} />
             </div>
-            <div className="col-span-4 mt-2 text-2xl font-bold text-black">
+            <div className="col-span-3 mt-2 text-2xl font-bold text-black">
               บาส
             </div>
             <div
@@ -23,7 +24,7 @@ export default function ManageVain() {
             >
               <ModalCreateGroup />
             </div>
-            {/* <div
+            <div
               className="col-span-1 place-self-center  flex justify-center  font-bold float-right"
               type="button"
             >
@@ -31,7 +32,7 @@ export default function ManageVain() {
               <div className=" mt-2 lg:ml-2 text-black">
                 <span>100</span>{" "}
               </div>
-            </div> */}
+            </div>
             <div
               className="col-span-1 float-right mt-2 font-bold text-center"
               type="button"
@@ -41,7 +42,9 @@ export default function ManageVain() {
           </div>
         </div>
       </div>
-      
+
+       
+        <Status1/>
     </div>
   );
 }

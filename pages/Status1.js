@@ -4,16 +4,24 @@ import Top from "../components/top";
 import Navbar from "../components/Navbar";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FiHeart } from "react-icons/fi";
-import { FaRegComment } from "react-icons/fa"
+import { FaRegComment } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 export default function Status1() {
-    const [count1, setCount1] = useState();
+  const [count1, setCount1] = useState();
+  const router = useRouter();
   return (
     <div className="bg-sky-100 min-h-screen ">
-      <Top />
+      {/* <Top /> */}
       <div className=" mx-auto max-w-lg ">
         <div className=" text-center m-4">
-          <button className=" text-white shadow-lg bg-blue-400  py-3 rounded-lg px-20">
+          <button
+            className=" text-white shadow-lg bg-blue-400  py-3 rounded-lg px-20"
+            type="button"
+            onClick={() => {
+              router.push("/Calender");
+            }}
+          >
             <span className="text-l text-center "> ตารางเวรทั้งหมด</span>
           </button>
         </div>

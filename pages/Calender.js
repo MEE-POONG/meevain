@@ -115,7 +115,7 @@ function Calender() {
           </div>
         ) : null}{" "}
       </div>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 }
