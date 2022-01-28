@@ -3,28 +3,29 @@ import { FaUser } from "react-icons/fa";
 import { MdOutlineCancel } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Image from "next/image";
+import ModalDeleteMember from "./modalDeleteMember";
 
 export default function ModalDeletepersonByGroup() {
-  const [showModalDele, setShowModalDele] = useState();
+  const [showModalDelete, setShowModalDelete] = useState();
   return (
     <div>
       <div className=" text-black ">
         <FaUser
           size={34}
           type="button"
-          onClick={() => setShowModalDele(true)}
+          onClick={() => setShowModalDelete(true)}
           className=""
         />
-        100
       </div>
-      {showModalDele ? (
+      {/* <span>100</span> */}
+      {showModalDelete ? (
         <div className="px-5 justify-center items-center flex  fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
           <div className="w-full  max-w-lg p-4 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
             <MdOutlineCancel
               size={24}
               className="float-right text-black cursor-pointer hover:shadow-2xl hover:scale-105 transform transition-all duration-500 "
               type="button"
-              onClick={() => setShowModalDele(false)}
+              onClick={() => setShowModalDelete(false)}
             />
             <div className="mt-6">
               <h2 className="text-2xl text-center text-black font-bold ">
@@ -42,7 +43,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -55,7 +56,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -68,7 +69,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -81,7 +82,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -94,7 +95,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -107,7 +108,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -120,7 +121,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -133,7 +134,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -146,7 +147,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -159,7 +160,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -172,7 +173,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -185,7 +186,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -198,7 +199,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -211,7 +212,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 <div className="">
                   <Image
@@ -224,7 +225,7 @@ export default function ModalDeletepersonByGroup() {
                   <p>bazz</p>
                 </div>
                 <div className="self-center justify-self-end mx-2">
-                  <RiDeleteBin6Line />
+                  <ModalDeleteMember/>
                 </div>
                 
               </div>

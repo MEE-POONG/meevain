@@ -52,7 +52,7 @@ function HomeAd() {
               className="rounded-2xl shadow-lg bg-green-200"
               type="button"
               onClick={() => {
-                router.push("/Status1");
+                router.push("");
               }}
             >
               <div className="grid grid-cols-8 px-3 py-3">
@@ -72,7 +72,7 @@ function HomeAd() {
               className="rounded-2xl shadow-lg text-white bg-cyan-200"
               type="button"
               onClick={() => {
-                router.push("/Status1");
+                router.push("");
               }}
             >
               <div className="grid grid-cols-8 px-3 py-3">

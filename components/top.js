@@ -14,7 +14,7 @@ export default function Top() {
         <div className="mx-auto max-w-lg">
           <div className="grid grid-cols-8 ">
             <div className="col-span-1 mt-1">
-              {/* <Image src="/images/userprofile-01.webp" width={40} height={40} /> */}
+            <Image src="/images/userprofile-01.webp" width={40} height={40} />
             </div>
             <div className="col-span-4 px-2 mt-2 text-2xl font-bold text-black">
               บาส
@@ -74,25 +74,25 @@ export default function Top() {
               <h2 className="text-2xl text-center font-bold ">Member</h2>
               <div className="grid grid-cols-8 mt-5">
                 <div className="col-span-1 text-left">
-                  <Image src="/images/emo.png" width={40} height={40} />
+                  <Image src="/images/userprofile-01.webp" width={40} height={40} />
                 </div>
                 <h2 className="col-span-4 mt-1 text-xl font-bold ">Member</h2>
               </div>
               <div className="grid grid-cols-8 mt-3">
                 <div className="col-span-1 text-left">
-                  <Image src="/images/emo.png" width={40} height={40} />
+                <Image src="/images/userprofile-01.webp" width={40} height={40} />
                 </div>
                 <h2 className="col-span-4 mt-1 text-xl font-bold ">Member</h2>
               </div>
               <div className="grid grid-cols-8 mt-3">
                 <div className="col-span-1 text-left">
-                  <Image src="/images/emo.png" width={40} height={40} />
+                <Image src="/images/userprofile-01.webp" width={40} height={40} />
                 </div>
                 <h2 className="col-span-4 mt-1 text-xl font-bold ">Member</h2>
               </div>
               <div className="grid grid-cols-8 mt-3">
                 <div className="col-span-1 text-left">
-                  <Image src="/images/emo.png" width={40} height={40} />
+                <Image src="/images/userprofile-01.webp" width={40} height={40} />
                 </div>
                 <h2 className="col-span-4 mt-1 text-xl font-bold ">Member</h2>
               </div>
