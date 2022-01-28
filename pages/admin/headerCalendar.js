@@ -19,7 +19,7 @@ export default function CalendarHeader({value,setValue}) {
   return (
     <div className="  bg-red-600  text-white  grid grid-cols-3 ">
     <span
-      className="text-left pl-4 "
+      className="cursor-pointer text-left pl-4 "
       onClick={() => !thisMonth() &&setValue(prevMonth())}
     >
       {!thisMonth() ? String.fromCharCode(171) : null}
@@ -28,10 +28,10 @@ export default function CalendarHeader({value,setValue}) {
       {currentMonthName()} {currentYear()}
     </span>
     <span
-      className="text-right pr-4 "
+      className="cursor-pointer text-right pr-4 "
       onClick={() => setValue(nextMonth())}
     >
-      {String.fromCharCode(187)}
+      {String.fromCharCode(187) }
     </span>
   </div>
   )
