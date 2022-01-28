@@ -4,14 +4,16 @@ import { MdOutlineCancel } from "react-icons/md";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import { FaUserPlus } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 function ModalCreateGroup() {
   const [showModalCreateGroup, setShowModalCreateGroup] = useState();
+  const router = useRouter();
   return (
     <div>
       <div className=" text-black ">
         <FaUserPlus
-          size={34}
+          size={43}
           type="button"
           onClick={() => setShowModalCreateGroup(true)}
           className=" float-right"
@@ -87,7 +89,10 @@ function ModalCreateGroup() {
                 </>
               )}
             </Disclosure>
-            <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg">
+            <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
+            onClick={() => {
+              router.push("/Status1");
+            }}>
               <span className="text-l text-center"> Create </span>
             </button>
           </div>

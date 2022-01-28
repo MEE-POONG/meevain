@@ -3,6 +3,7 @@ import ModalIconLogout from "../../components/modalIconLogout";
 import ModalCreateGroup from "../../components/modalCreateGroup";
 import Image from "next/image";
 import ModalDeletepersonByGroup from "../../components/modalDeletepersonByGroup";
+import Home from "../home";
 
 export default function ManageVain() {
   return (
@@ -13,24 +14,24 @@ export default function ManageVain() {
             <div className="col-span-1 mt-1">
               <Image src="/images/userprofile-01.webp" width={40} height={40} />
             </div>
-            <div className="col-span-3 px-2 mt-2 text-2xl font-bold text-black">
+            <div className="col-span-4 mt-2 text-2xl font-bold text-black">
               บาส
             </div>
             <div
-              className="col-span-1 mt-2  font-bold float-right"
+              className="col-span-1 place-self-center mr-4 font-bold float-right"
               type="button"
             >
               <ModalCreateGroup />
-              {/* <FaUserPlus size={36} color="black" className="float-right" /> */}
             </div>
-            <div
-              className="col-span-1 mt-2  font-bold float-right"
+            {/* <div
+              className="col-span-1 place-self-center  flex justify-center  font-bold float-right"
               type="button"
             >
               <ModalDeletepersonByGroup />
-
-              {/* <FaUserPlus size={36} color="black" className="float-right" /> */}
-            </div>
+              <div className=" mt-2 lg:ml-2 text-black">
+                <span>100</span>{" "}
+              </div>
+            </div> */}
             <div
               className="col-span-1 float-right mt-2 font-bold text-center"
               type="button"

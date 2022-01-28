@@ -60,7 +60,7 @@ export default function Status1() {
           </div>
         </div>
       </div>
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 }
