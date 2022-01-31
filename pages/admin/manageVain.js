@@ -22,7 +22,7 @@ export default function ManageVain() {
               className="col-span-1 place-self-center mr-4 font-bold float-right"
               type="button"
             >
-              <ModalCreateGroup />
+         
             </div>
             <div
               className="col-span-1 place-self-center  flex justify-center  font-bold float-right"

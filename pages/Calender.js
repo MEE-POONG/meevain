@@ -4,13 +4,25 @@ import Calendar from "react-calendar";
 import Top from "../components/top";
 import { MdOutlineCancel } from "react-icons/md";
 import Image from "next/image";
+import ModalCreateGroup from "../components/ModalCreateGroup";
+
 
 function Calender() {
   const [showModalVain, setShowModalVain] = useState();
   const [value, onChange, onClickDay] = useState(new Date());
   return (
-    <div className="bg-sky-100 min-h-screen ">
-      <Top />
+    <div className="bg-sky-100 min-h-screen text-black ">
+       <div className="py-2 px-5 w-full shadow-2xl bg-primary text-white ">
+        <div className="mx-auto max-w-lg">
+          <div className="grid grid-cols-8 ">
+            <div className="col-span-1 mt-1">
+              <Image src="/images/userprofile-01.webp" width={40} height={40} />
+            </div>
+            <div className="col-span-6 px-2 mt-2 text-2xl  font-bold ">บาส</div>
+            <ModalCreateGroup />
+          </div>
+        </div>
+      </div>
 
       <div className="flex justify-center h-full   ">
         <Calendar

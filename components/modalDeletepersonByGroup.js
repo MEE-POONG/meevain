@@ -14,7 +14,7 @@ export default function ModalDeletepersonByGroup() {
           size={34}
           type="button"
           onClick={() => setShowModalDelete(true)}
-          className=""
+          className="float-right mt-1"
         />
       </div>
       {/* <span>100</span> */}

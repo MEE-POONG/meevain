@@ -2,14 +2,26 @@ import React from "react";
 import Top from "../components/top";
 import Image from "next/image";
 import { FiLogIn } from "react-icons/fi";
+import ModalCreateGroup from "../components/ModalCreateGroup";
+
 
 import Modaleditproflie from "../components/modaleditproflie";
 
 export default function Profile() {
   return (
     <div className="bg-sky-100 min-h-screen ">
-      <Top />
-      <div className=" mx-auto max-w-lg ">
+ <div className="py-2 px-5 w-full shadow-2xl bg-primary text-white ">
+        <div className="mx-auto max-w-lg">
+          <div className="grid grid-cols-8 ">
+            <div className="col-span-1 mt-1">
+              <Image src="/images/userprofile-01.webp" width={40} height={40} />
+            </div>
+            <div className="col-span-6 px-2 mt-2 text-2xl  font-bold ">บาส</div>
+            <ModalCreateGroup />
+          </div>
+        </div>
+      </div>
+      <div className=" mx-auto max-w-lg text-black  ">
         <div className=" flex justify-center mx-auto  w-2/5 mt-10  ">
           <Image
             src="/images/userprofile-01.webp"

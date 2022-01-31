@@ -11,7 +11,7 @@ function ModalCreateGroup() {
   const router = useRouter();
   return (
     <div>
-      <div className=" text-black ">
+      <div className=" text-white ">
         <FaUserPlus
           size={43}
           type="button"
@@ -19,9 +19,10 @@ function ModalCreateGroup() {
           className=" float-right"
         />
       </div>
+
       {showModalCreateGroup ? (
         <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
-          <div className="w-full  max-w-lg p-4 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
+          <div className="w-full   max-w-lg p-4 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
             <MdOutlineCancel
               size={24}
               className="float-right text-black cursor-pointer hover:shadow-2xl hover:scale-105 transform transition-all duration-500"
