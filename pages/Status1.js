@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import Top from "../components/top";
-import Navbar from "../components/Navbar";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FiHeart } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
@@ -67,8 +66,7 @@ export default function Status1() {
             </div>
           </div>
         </div>
-      </div>
-      {/* <Navbar /> */}
+      </div>{" "}
     </div>
   );
 }

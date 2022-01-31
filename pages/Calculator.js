@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+
 import Top from "../components/top";
 
 function Calculator() {
@@ -29,7 +29,7 @@ function Calculator() {
           </div>
         </div>
       </div>
-      <Navbar />
+
     </div>
   );
 }

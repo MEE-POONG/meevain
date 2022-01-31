@@ -4,17 +4,16 @@ import { useRecoilState } from "recoil";
 
 function Navbar() {
   const [activeList, setActiveList] = useRecoilState(navActiveState);
-  // const [activeList, setActiveList] = useState();
-  console.log(activeList);
+
   return (
-    <body className="fixed bottom-0 z-10 mt-12">
-      <nav className="navigation shadow-2xl">
-        <ul>
+    <body className="fixed bottom-0 z-10 ">
+      <nav className=" navigation bg-white  flex  justify-center items-center shadow-2xl">
+        <ul className="flex">
           <li
             className={`list ${activeList === 0 ? "active" : ""}  `}
             onClick={() => setActiveList(0)}
           >
-            <a href="/home">
+            <a href="/">
               <span className="icon  ">
                 <ion-icon name="home-outline"></ion-icon>
               </span>

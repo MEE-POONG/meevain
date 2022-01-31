@@ -2,7 +2,7 @@ import React from "react";
 import Top from "../components/top";
 import Image from "next/image";
 import { FiLogIn } from "react-icons/fi";
-import Navbar from "../components/Navbar";
+
 import Modaleditproflie from "../components/modaleditproflie";
 
 export default function Profile() {
@@ -55,7 +55,7 @@ export default function Profile() {
 
         </div>
       </div>
-      {/* <Navbar /> */}
+
     </div>
   );
 }

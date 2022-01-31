@@ -2,14 +2,14 @@ import Image from "next/image";
 import { MdOutlineCancel } from "react-icons/md";
 import React from "react";
 import { useRouter } from "next/router";
-import Navbar from "../components/Navbar";
+
 import Top from "../components/top";
 
 export default function Home() {
   const [showModal, setShowModal] = React.useState(false);
   const router = useRouter();
   return (
-    <div className="bg-sky-100 min-h-screen ">
+    <div className="bg-sky-100 w-screen min-h-screen   ">
       <Top />
       <p className="py-7 font-bold text-2xl text-center text-shadow-xl">
         Group All
@@ -94,7 +94,6 @@ export default function Home() {
           </div>
         </div>
       ) : null}{" "}
-      {/* <Navbar /> */}
     </div>
   );
 }

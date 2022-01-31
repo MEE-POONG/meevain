@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import Navbar from "../components/Navbar";
+
 import Top from "../components/top";
 import { MdOutlineCancel } from "react-icons/md";
 import Image from "next/image";
@@ -115,7 +115,7 @@ function Calender() {
           </div>
         ) : null}{" "}
       </div>
-      {/* <Navbar /> */}
+
     </div>
   );
 }
