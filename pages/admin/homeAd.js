@@ -32,7 +32,7 @@ function HomeAd() {
                 type="button"
               >
                 <ModalCreateGroup/>
-                {/* <FaUserPlus size={36} color="black" className="float-right" /> */}
+                
               </div>
               <div
                 className="col-span-1 float-right mt-2 font-bold text-center"

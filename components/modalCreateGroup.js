@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { MdOutlineCancel } from "react-icons/md";
+import { MdOutlineCancel, MdContentCopy } from "react-icons/md";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
 import { FaUserPlus } from "react-icons/fa";
@@ -29,7 +29,9 @@ function ModalCreateGroup() {
               onClick={() => setShowModalCreateGroup(false)}
             />
             <div className="text-center flex-auto justify-center mt-6">
-              <h2 className="text-2xl text-center text-black font-bold ">Create Group </h2>
+              <h2 className="text-2xl text-center text-black font-bold ">
+                Create Group{" "}
+              </h2>
               <div className=" mt-4 mb-2">
                 <Image
                   src="/images/userprofile-01.webp"
@@ -43,6 +45,28 @@ function ModalCreateGroup() {
               type="text"
               placeholder="Name Group"
             />
+
+            {/* <div className=" flex  ">
+              <input
+                className="w-full  bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
+                type="text"
+                placeholder="Link Group"
+              />
+
+              <span className=" text-black absolute flex-1 float-right">
+                <MdContentCopy />
+              </span>
+            </div> */}
+
+            <div className="">
+              <div className="flex w-full   rounded-lg border-gray-300 py-1 bg-gray-50 text-gray-700 border leading-tight focus:outline-none focus:bg-white">
+                <input className="flex-1 " placeholder="Link Group" />
+                <span className=" text-black">
+                  <MdContentCopy />
+                </span>
+              </div>
+            </div>
+
             <Disclosure>
               {({ open }) => (
                 <>
@@ -89,10 +113,12 @@ function ModalCreateGroup() {
                 </>
               )}
             </Disclosure>
-            <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
-            onClick={() => {
-              router.push("/Status1");
-            }}>
+            <button
+              className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
+              onClick={() => {
+                router.push("/Status1");
+              }}
+            >
               <span className="text-l text-center"> Create </span>
             </button>
           </div>
