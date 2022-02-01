@@ -3,6 +3,7 @@ import ModalCreateGroup from "./ModalCreateGroup";
 import ModalDeletepersonByGroup from "./modalDeletepersonByGroup";
 import Image from "next/image";
 import Swal from "sweetalert2";
+import {FaShareAlt} from 'react-icons/fa'
 export default function TopInGroup() {
   const handleCreateLink = async (e) => {
     e.preventDefault();
@@ -35,16 +36,14 @@ export default function TopInGroup() {
           <div className="col-span-1 mt-1">
             <Image src="/images/userprofile-01.webp" width={40} height={40} />
           </div>
-          <div className="col-span-5 px-2 mt-2 text-2xl text-black font-bold ">
+          <div className="col-span-5 px-2 mt-2 text-2xl  font-bold ">
             บาส
           </div>
-          <button
-            className="col-span-1 place-self-center mr-4 font-bold float-right"
-            type="button"
-            onClick={handleCreateLink}
-          >
-            SHARE LINK
+          <button className="col-span-1 place-self-center mr-4 font-bold float-right text-black mt-2">
+            <FaShareAlt size={32} type="button"
+            onClick={handleCreateLink}/>
           </button>
+          
           <div
             className="col-span-1 place-self-center  flex justify-center  font-bold float-right"
             type="button"

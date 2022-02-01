@@ -6,6 +6,7 @@ import { FiHeart } from "react-icons/fi";
 import { FaRegComment } from "react-icons/fa";
 import { useRouter } from "next/router";
 import TopInGroup from "../components/TopInGroup"
+import Wahool from "../components/navbarwahoo";
 
 
 export default function Status1() {
@@ -69,7 +70,9 @@ export default function Status1() {
             </div>
           </div>
         </div>
+        <Wahool/>
       </div>{" "}
+      
     </div>
   );
 }
