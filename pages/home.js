@@ -12,18 +12,7 @@ export default function Home() {
   const router = useRouter();
   return (
     <div className="bg-sky-100 w-screen min-h-screen   ">
-      <div className="py-2 px-5 w-full shadow-2xl bg-primary text-white ">
-        <div className="mx-auto max-w-lg">
-          <div className="grid grid-cols-8 ">
-            <div className="col-span-1 mt-1">
-              <Image src="/images/userprofile-01.webp" width={40} height={40} />
-            </div>
-            <div className="col-span-6 px-2 mt-2 text-2xl  font-bold ">บาส</div>
-            <ModalCreateGroup />
-          </div>
-        </div>
-        
-      </div>
+      
       <p className="py-7 font-bold text-2xl text-center text-neutral-focus  ">
         Group All
       </p>

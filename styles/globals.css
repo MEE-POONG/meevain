@@ -277,7 +277,17 @@ a {
 {
   min-width: 300px;
 }
+@media only screen and (max-width: 600px) {
+  .mbsc-windows.mbsc-timeline-resource-bg, .mbsc-windows.mbsc-timeline-resource-empty,.mbsc-timeline-resources.mbsc-ltr {
+    min-width: 150px;
+  }
+}
+
 .mbsc-timeline-resource, .mbsc-timeline-row {
   min-height: 0px;
   max-height: 10px;
 }
+.mbsc-windows.mbsc-eventcalendar{
+  min-height: inherit;
+}
+

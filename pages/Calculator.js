@@ -1,21 +1,12 @@
 import React from "react";
 import ModalCreateGroup from "../components/ModalCreateGroup";
 import Image from "next/image";
+import TopSimple from "../components/topSimple";
 
 function Calculator() {
   return (
     <div className="bg-sky-100 min-h-screen ">
- <div className="py-2 px-5 w-full shadow-2xl bg-primary text-white ">
-        <div className="mx-auto max-w-lg">
-          <div className="grid grid-cols-8 ">
-            <div className="col-span-1 mt-1">
-              <Image src="/images/userprofile-01.webp" width={40} height={40} />
-            </div>
-            <div className="col-span-6 px-2 mt-2 text-2xl  font-bold ">บาส</div>
-            <ModalCreateGroup />
-          </div>
-        </div>
-      </div>
+<TopSimple/>
       <div className="w-screen  mt-2 text-center px-5 min-h-lg  text-black ">
         <div className="text-2xl font-bold mt-6 mb-4">สรุปรายได้ประจำเดือน</div>
         <div className="gap-5 bg-white rounded-lg shadow-lg p-4  ">
