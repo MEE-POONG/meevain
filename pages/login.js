@@ -1,10 +1,35 @@
 import React from "react";
 import Image from "next/image";
-import { BsCalendarCheck } from "react-icons/bs";
+import { useState } from "react";
+
+import Swal from "sweetalert2";
 import { useRouter } from "next/router";
 
 export default function Login() {
   const router = useRouter();
+
+  const [username, setUsername] = useState([]);
+  const [password, setPassword] = useState([]);
+
+  const handleAddProduct = async (e) => {
+    e.preventDefault();
+    if (username === "user" && password === "1234") {
+      window.sessionStorage.setItem("login", "true");
+      router.push("/Home");
+    } else
+      Swal.fire({
+        title: "Username หรือ Password ไม่ถูกต้องค่ะ",
+        width: 600,
+        padding: "3em",
+        // background: '#fff url(/images/trees.png)',
+        backdrop: `
+        rgba(0,0,123,0.4)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `,
+      });
+  };
   return (
     <div className="bg-sky-50 min-h-screen">
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
@@ -19,11 +44,23 @@ export default function Login() {
             <input
               className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
               type="text"
+              name="user-name"
+              // placeholder="Username"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
             />
             <p className="font-bold italic mb-1">Password</p>
             <input
               className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
-              type="text"
+              type="password"
+              name="user-password"
+              // placeholder="Password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
             <div className="flex items-center justify-between">
               <div className="flex items-center"></div>
@@ -43,10 +80,10 @@ export default function Login() {
 
             <button
               className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg  p-3 rounded-lg"
-              type="button"
-              onClick={() => {
-                router.push("/home");
-              }}
+              type="submit"
+              value="submit"
+              name="submit"
+              onClick={handleAddProduct}
             >
               <span className="text-l text-center "> Login </span>
             </button>
