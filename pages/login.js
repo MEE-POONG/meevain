@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     if (username === "user" && password === "1234") {
       window.sessionStorage.setItem("login", "true");
-      router.push("/Home");
+      router.push("/");
     } else
       Swal.fire({
         title: "Username หรือ Password ไม่ถูกต้อง",
