@@ -2,10 +2,7 @@ import Image from "next/image";
 import { MdOutlineCancel } from "react-icons/md";
 import React from "react";
 import { useRouter } from "next/router";
-import { FaUserPlus, FaUser } from "react-icons/fa";
-import { MdGroupAdd } from "react-icons/md";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import Navbar from "../components/Navbar";
+
 import ModalCreateGroup from "../components/ModalCreateGroup";
 import Wahool from "../components/navbarwahoo";
 

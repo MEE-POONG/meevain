@@ -19,7 +19,6 @@ function ModalCreateGroup() {
           className=" float-right"
         />
       </div>
-
       {showModalCreateGroup ? (
         <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
           <div className="w-full   max-w-lg p-4 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
@@ -44,7 +43,7 @@ function ModalCreateGroup() {
             <input
               className="w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
               type="text"
-              placeholder="Name Group"
+              placeholder="Name Group 555"
             />
 
             {/* <div className=" flex  ">
@@ -61,6 +60,7 @@ function ModalCreateGroup() {
 
             <div className="">
               <div className="flex w-full   rounded-lg border-gray-300 py-1 bg-gray-50 text-gray-700 border leading-tight focus:outline-none focus:bg-white">
+                {/* <p className="flex " placeholder="Link Group" ></p> */}
                 <input className="flex-1 " placeholder="Link Group" />
                 <span className=" text-black">
                   <MdContentCopy />

@@ -25,6 +25,7 @@ export default function Wahool() {
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
         elevation={3}
         value={value}
+        className=""//bg-color??
         onChange={handleChange}
       >
         <BottomNavigationAction
@@ -33,7 +34,7 @@ export default function Wahool() {
           icon={<BsCalendar2Date />}
           type="button"
           onClick={() => {
-            router.push("/");
+            router.push("/Calender");
           }}
         />
         <BottomNavigationAction
@@ -51,7 +52,7 @@ export default function Wahool() {
           icon={<BsCalendarPlus />}
           type="button"
           onClick={() => {
-            router.push("/");
+            router.push("/admin/morevain");
           }}
         />
         <BottomNavigationAction
@@ -60,7 +61,7 @@ export default function Wahool() {
           icon={<BsCalculator />}
           type="button"
           onClick={() => {
-            router.push("/");
+            router.push("/Calculator");
           }}
         />
         <BottomNavigationAction
@@ -69,7 +70,7 @@ export default function Wahool() {
           icon={<BsPerson />}
           type="button"
           onClick={() => {
-            router.push("/");
+            router.push("/profile");
           }}
         />
       </BottomNavigation>
