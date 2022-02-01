@@ -7,6 +7,7 @@ import { MdGroupAdd } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Navbar from "../components/Navbar";
 import ModalCreateGroup from "../components/ModalCreateGroup";
+import Wahool from "../components/navbarwahoo";
 
 export default function Home() {
   const [showModal, setShowModal] = React.useState(false);
@@ -82,7 +83,9 @@ export default function Home() {
             <span className="text-xl text-center font-bold "> Join Group </span>
           </button>
         </div>
+        
       </div>
+      <Wahool/>
       {showModal ? (
         <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
           <div className="w-full text-gray-500 max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
