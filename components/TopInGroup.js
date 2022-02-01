@@ -1,5 +1,5 @@
 import React from "react";
-import ModalCreateGroup from "./ModalCreateGroup";
+
 import ModalDeletepersonByGroup from "./modalDeletepersonByGroup";
 import Image from "next/image";
 import Swal from "sweetalert2";

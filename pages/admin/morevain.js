@@ -5,14 +5,16 @@ import NavbarAdmin from "../../components/NavbarAdmin";
 
 
 import TableVain from "../../components/tableVain";
+import Wahool from "../../components/navbarwahoo";
+import TopSimple from "../../components/topSimple";
 
 export default function Morevain() {
   return (
     <div>
       <div className=" bg-sky-100 min-h-screen ">
-
+        <TopSimple/>
         <div className=" mx-auto max-w-lg ">
-          <div className="">
+          <div className=" text-black">
             <form className=" mx-4 m-6">
               <p className="font-bold italic pl-2 mb-1">ชื่อเวร</p>
               <input
@@ -53,7 +55,7 @@ export default function Morevain() {
           </div>
         </div>
       </div>
-      {/* <NavbarAdmin /> */}
+      <Wahool/>
     </div>
   );
 }

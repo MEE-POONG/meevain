@@ -2,6 +2,7 @@ import React from "react";
 import ModalCreateGroup from "../components/ModalCreateGroup";
 import Image from "next/image";
 import TopSimple from "../components/topSimple";
+import Wahool from "../components/navbarwahoo";
 
 function Calculator() {
   return (
@@ -30,7 +31,7 @@ function Calculator() {
           </div>
         </div>
       </div>
-
+<Wahool/>
     </div>
   );
 }

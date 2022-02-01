@@ -2,16 +2,16 @@ import React from "react";
 
 import Image from "next/image";
 import { FiLogIn } from "react-icons/fi";
-import ModalCreateGroup from "../components/ModalCreateGroup";
-import TopSimple from "../components/topSimple"
+
+import TopSimple from "../components/topSimple";
 
 import Modaleditproflie from "../components/modaleditproflie";
-import Top from "../components/topSimple";
+import Wahool from "../components/navbarwahoo";
 
 export default function Profile() {
   return (
     <div className="bg-sky-100 min-h-screen ">
- <TopSimple/>
+      <TopSimple />
       <div className=" mx-auto max-w-lg text-black  ">
         <div className=" flex justify-center mx-auto  w-2/5 mt-10  ">
           <Image
@@ -55,10 +55,9 @@ export default function Profile() {
             <span className=" text-center px-2 "> Sign out </span>
           </div>
           <div className=" h-0.5 bg-gray-400"></div>
-
         </div>
       </div>
-
+      <Wahool/>
     </div>
   );
 }

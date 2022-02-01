@@ -6,6 +6,7 @@ import dayStyles, { beforeToday } from "./CalendarStyle";
 import CalendarHeader from "./headerCalendar";
 import { MdOutlineCancel } from "react-icons/md";
 import Image from "next/image";
+import Wahool from "../../components/navbarwahoo";
 
 export default function Calender() {
   const [value, setValue] = useState(moment());
@@ -70,6 +71,7 @@ export default function Calender() {
           </div>
         </div>
       ) : null}{" "}
+      <Wahool/>
     </div>
   );
 }
