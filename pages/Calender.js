@@ -1,10 +1,11 @@
 import React from 'react';
-import CalendarComponent from '../components/CalendarComponent';
+import CalendarUser from '../components/calendarUser';
 
 function Calender() {
   return <div>
-    <CalendarComponent/>
+<CalendarUser/>
   </div>;
 }
 
 export default Calender;
+ 
