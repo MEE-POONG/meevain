@@ -18,10 +18,10 @@ export default function Login() {
       router.push("/Home");
     } else
       Swal.fire({
-        title: "Username หรือ Password ไม่ถูกต้องค่ะ",
+        title: "Username หรือ Password ไม่ถูกต้อง",
         width: 600,
         padding: "3em",
-        // background: '#fff url(/images/trees.png)',
+        background: '#fff url(/images/trees.png)',
         backdrop: `
         rgba(0,0,123,0.4)
         url("/images/nyan-cat.gif")
@@ -40,7 +40,7 @@ export default function Login() {
           </div>
 
           <form className="">
-            <p className="font-bold  mb-1">Email</p>
+            <p className="font-bold text-black mb-1">Email</p>
             <input
               className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
               type="text"
@@ -51,7 +51,7 @@ export default function Login() {
                 setUsername(e.target.value);
               }}
             />
-            <p className="font-bold italic mb-1">Password</p>
+            <p className="font-bold italic text-black mb-1">Password</p>
             <input
               className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
               type="password"
