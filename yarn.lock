@@ -507,6 +507,10 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@mobiscroll/react@https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.13.5.tgz":
+  version "5.13.5"
+  resolved "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.13.5.tgz#031c7c88a43e2f0f22441ecb27df704b1a78893d"
+
 "@mui/base@5.0.0-alpha.66":
   version "5.0.0-alpha.66"
   resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-alpha.66.tgz#5f03e641daecbc54a7b03d6368e625fef45cb7e4"

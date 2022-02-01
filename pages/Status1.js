@@ -46,7 +46,7 @@ export default function Status1() {
             className=" text-white shadow-lg bg-blue-400  py-3 rounded-lg px-20"
             type="button"
             onClick={() => {
-              router.push("/Calender");
+              router.push("/CalendarAll");
             }}
           >
             <span className="text-l text-center "> ตารางเวรทั้งหมด</span>

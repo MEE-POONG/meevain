@@ -259,3 +259,25 @@ a {
   color: #62676b;
   opacity: 40%;
 }
+
+.mbsc-timeline-slot
+{
+  max-width: 20px;
+}
+.mbsc-timeline-day
+{
+  max-width: 60px !important;
+  min-width: 0px !important ;
+}
+.mbsc-timeline-resources.mbsc-ltr
+{
+  min-width: 300px;
+}
+.mbsc-windows.mbsc-timeline-resource-bg, .mbsc-windows.mbsc-timeline-resource-empty
+{
+  min-width: 300px;
+}
+.mbsc-timeline-resource, .mbsc-timeline-row {
+  min-height: 0px;
+  max-height: 10px;
+}
