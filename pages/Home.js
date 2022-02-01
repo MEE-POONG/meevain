@@ -5,9 +5,39 @@ import { useRouter } from "next/router";
 
 import ModalCreateGroup from "../components/ModalCreateGroup";
 import Wahool from "../components/navbarwahoo";
+import Swal from "sweetalert2";
+
 
 export default function Home() {
-  const [showModal, setShowModal] = React.useState(false);
+  // const [showModal, setShowModal] = React.useState(false);
+
+  const handleShereLink = async (e) =>{
+    e.preventDefault();
+
+
+    // const LinkGroup = "https://www.facebook.com/watch/?v=462015502262754";
+    const { value: link } = await Swal.fire({
+      title: "ใส่ลิงค์เพื่อเข้าร่วม",
+      input: "text",
+      inputLabel: "ลิงค์ของคุณ",
+      // inputValue: LinkGroup,
+      showCancelButton: true,
+      cancelButtonText:
+    'ยกเลิก',
+      confirmButtonText: "เข้าร่วม",
+      inputValidator: (value) => {
+        if (!value) {
+          return "You need to write something!";
+        }
+      },
+    });
+
+    if (link) {
+      // Swal.fire(`Your IP address is  ${ipAddress}`);
+      Swal.fire({ icon: "success", title: `เข้าร่วม` });
+    }
+
+  }
 
   const router = useRouter();
   return (
@@ -64,7 +94,7 @@ export default function Home() {
           <button
             className="w-full btn-primary text-white shadow-lg  p-3 rounded-lg mt-5"
             type="button"
-            onClick={() => setShowModal(true)}
+            onClick={handleShereLink}
           >
             <span className="text-xl text-center font-bold "> Join Group </span>
           </button>
@@ -72,7 +102,7 @@ export default function Home() {
         
       </div>
       <Wahool/>
-      {showModal ? (
+      {/* {showModal ? (
         <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
           <div className="w-full text-gray-500 max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
             <MdOutlineCancel
@@ -99,7 +129,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      ) : null}{" "}
+      ) : null}{" "} */}
     </div>
   );
 }

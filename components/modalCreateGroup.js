@@ -46,27 +46,9 @@ function ModalCreateGroup() {
               placeholder="Name Group 555"
             />
 
-            {/* <div className=" flex  ">
-              <input
-                className="w-full  bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
-                type="text"
-                placeholder="Link Group"
-              />
+  
 
-              <span className=" text-black absolute flex-1 float-right">
-                <MdContentCopy />
-              </span>
-            </div> */}
-
-            <div className="">
-              <div className="flex w-full   rounded-lg border-gray-300 py-1 bg-gray-50 text-gray-700 border leading-tight focus:outline-none focus:bg-white">
-                {/* <p className="flex " placeholder="Link Group" ></p> */}
-                <input className="flex-1 " placeholder="Link Group" />
-                <span className=" text-black">
-                  <MdContentCopy />
-                </span>
-              </div>
-            </div>
+            
 
             <Disclosure>
               {({ open }) => (
