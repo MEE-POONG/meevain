@@ -25,7 +25,7 @@ export default function Wahool() {
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
         elevation={3}
         value={value}
-        className=""//bg-color??
+        className=" text-2xl"//bg-color??
         onChange={handleChange}
       >
         <BottomNavigationAction

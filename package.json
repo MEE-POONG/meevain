@@ -31,6 +31,7 @@
     "recoil": "^0.5.2",
     "recoil-persist": "^4.0.0",
     "styled-components": "^5.3.3",
+    "sweetalert2": "^11.3.10",
     "yarn": "^1.22.17"
   },
   "devDependencies": {
