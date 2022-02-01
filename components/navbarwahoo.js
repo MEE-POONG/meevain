@@ -43,7 +43,7 @@ export default function Wahool() {
           icon={<BsHouseDoor />}
           type="button"
           onClick={() => {
-            router.push("/Home");
+            router.push("/");
           }}
         />
         <BottomNavigationAction
