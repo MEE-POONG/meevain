@@ -11,12 +11,12 @@ function ModalCreateGroup() {
   const router = useRouter();
   return (
     <div>
-      <div className=" text-blue-600 ">
+      <div className="  ">
         <FaUserPlus
           size={43}
           type="button"
           onClick={() => setShowModalCreateGroup(true)}
-          className=" float-right"
+          className="text-blue-600 float-right"
         />
       </div>
       {showModalCreateGroup ? (
