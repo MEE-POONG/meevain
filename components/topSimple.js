@@ -9,14 +9,14 @@ export default function TopSimple() {
   const [showModaladd, setShowModaladd] = React.useState(false);
   const [showModaluser, setShowModaluser] = React.useState(false);
   return (
-    <div className="py-2 px-5 w-full shadow-2xl bg-primary text-white ">
+    <div className="py-2 px-5 w-full shadow-2xl bg-white text-black ">
         <div className="mx-auto max-w-lg">
           <div className="grid grid-cols-8 ">
             <div className="col-span-1 mt-1">
-              <Image src="/images/userprofile-01.webp" width={40} height={40} />
+            <Image src="/images/logo.png" width={50} height={50} />
             </div>
-            <div className="col-span-6 px-2 mt-2 text-2xl  font-bold ">บาส</div>
-            <ModalCreateGroup />
+            <div className="col-span-6 px-2 self-center text-xl  font-bold ">MeeDuty</div>
+           <div className="text-blue-600"><ModalCreateGroup /></div> 
           </div>
         </div>
       </div>

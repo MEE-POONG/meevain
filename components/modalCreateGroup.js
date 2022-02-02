@@ -11,7 +11,7 @@ function ModalCreateGroup() {
   const router = useRouter();
   return (
     <div>
-      <div className=" text-white ">
+      <div className=" text-blue-600 ">
         <FaUserPlus
           size={43}
           type="button"
