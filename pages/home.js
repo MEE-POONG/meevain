@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MdOutlineCancel } from "react-icons/md";
+import { MdOutlineCancel, MdVerified } from "react-icons/md";
 import React from "react";
 import { useRouter } from "next/router";
 
@@ -7,46 +7,40 @@ import ModalCreateGroup from "../components/ModalCreateGroup";
 import Wahool from "../components/navbarwahoo";
 import Swal from "sweetalert2";
 
-
 export default function Home() {
   // const [showModal, setShowModal] = React.useState(false);
 
-  const handleShereLink = async (e) =>{
+  const handleShereLink = async (e) => {
     e.preventDefault();
-
 
     // const LinkGroup = "https://www.facebook.com/watch/?v=462015502262754";
     const { value: link } = await Swal.fire({
-      title: "ใส่ลิงค์เพื่อเข้าร่วม",
-      input: "text",
+      title: "คุณต้องการเข้าร่วม ?",
+      // input: "text",
       inputLabel: "ลิงค์ของคุณ",
       // inputValue: LinkGroup,
       showCancelButton: true,
-      cancelButtonText:
-    'ยกเลิก',
-      confirmButtonText: "เข้าร่วม",
-      inputValidator: (value) => {
-        if (!value) {
-          return "You need to write something!";
-        }
-      },
+      cancelButtonText: "ยกเลิก",
+      confirmButtonText: "ขอเข้าร่วม",
+      // inputValidator: (value) => {
+      //   if (!value) {
+      //     return "You need to write something!";
+      //   }
+      // },
     });
 
     if (link) {
-      // Swal.fire(`Your IP address is  ${ipAddress}`);
-      Swal.fire({ icon: "success", title: `เข้าร่วม` });
+      Swal.fire({ icon: "info", title: `รอการยืนยัน` });
     }
-
-  }
+  };
 
   const router = useRouter();
   return (
     <div className="bg-sky-100 w-screen min-h-screen   ">
-      
       <p className="py-7 font-bold text-2xl text-center text-neutral-focus  ">
         Group All
       </p>
-      
+
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-md w-full space-y-8 ">
           <div
@@ -65,17 +59,17 @@ export default function Home() {
                 className="mt-3"
               />
               <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
-                Bazz  <div className="badge ml-2 badge-outline">12</div> 
+                Bazz{" "}
+                <div className="badge ml-2 text-xs badge-outline p-2">
+                  เข้าร่วมแล้ว <MdVerified className=" ml-1" />{" "}
+                </div>
               </div>
-            
             </div>
           </div>
           <div
             className="rounded-2xl shadow-lg text-white btn-accent"
             type="button"
-            onClick={() => {
-              router.push("/Status1");
-            }}
+            onClick={handleShereLink}
           >
             <div className="grid grid-cols-8 px-3 py-3">
               <Image
@@ -86,7 +80,10 @@ export default function Home() {
                 className="mt-3"
               />
               <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
-                Jame   <div className="badge ml-2 badge-outline">15</div>
+                Jame{" "}
+                <div className="badge ml-2 text-xs badge-outline p-2">
+                  รอการยืนยัน
+                </div>
               </div>
             </div>
           </div>
@@ -94,14 +91,13 @@ export default function Home() {
           <button
             className="w-full btn-primary text-white shadow-lg  p-3 rounded-lg mt-5"
             type="button"
-            onClick={handleShereLink}
+            // onClick={handleShereLink}
           >
             <span className="text-xl text-center font-bold "> Join Group </span>
           </button>
         </div>
-        
       </div>
-      <Wahool/>
+      <Wahool />
       {/* {showModal ? (
         <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
           <div className="w-full text-gray-500 max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
