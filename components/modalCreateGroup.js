@@ -51,7 +51,7 @@ export default function ModalCreateGroup() {
     });
   };
   const validationMember = () => {
-    if (!name) {
+    if (!name || !color) {
       return Swal.fire({
         icon: "error",
         title: "กรอกข้อมูลไม่ครบ",
@@ -90,7 +90,7 @@ export default function ModalCreateGroup() {
                   />
                 </div>
               </div>
-              <form onClick={handelSubmit}>
+              <form onSubmit={handelSubmit}>
               <input
                 className="w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
                 type="text"
@@ -117,10 +117,10 @@ export default function ModalCreateGroup() {
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pt-2 pb-2 ">
                       <div className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between">
-                        <button
+                        <div
                           className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
-                          type="button"
-                          
+                         
+                          value="#ffff"
                           onChange={(e) =>
                             setFormCreateGroup({
                               ...formCreateGroup,
@@ -128,15 +128,15 @@ export default function ModalCreateGroup() {
                             })
                           }
                           id="color"
-                        ></button>
-                        <button
+                        ></div>
+                        <div
                           className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
                           type="button"
-                        ></button>
-                        <button
+                        ></div>
+                        <div
                           className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"
                           type="button"
-                        ></button>
+                        ></div>
                         <button
                           className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"
                           type="button"
