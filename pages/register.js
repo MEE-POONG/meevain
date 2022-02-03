@@ -13,7 +13,7 @@ const memberState = {
   tel: "",
   img: "",
 };
-
+// const defaultMemberState = [];
 export default function Register() {
   const [formRegister, setFormRegister] = useState(memberState);
 
