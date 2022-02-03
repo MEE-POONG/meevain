@@ -1,12 +1,12 @@
 import { atom } from "recoil";
-
 import { recoilPersist } from "recoil-persist";
 
 const { persistAtom } = recoilPersist();
 
-const navActiveState = atom({
-  key: "navActiveState",
-  default: "/",
+const memberState = atom({
+  key: "memberState",
+  default: null,
   effects_UNSTABLE: [persistAtom],
 });
-export { navActiveState };
+
+export { memberState };

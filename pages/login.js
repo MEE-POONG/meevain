@@ -1,35 +1,32 @@
 import React from "react";
 import Image from "next/image";
-import { useState } from "react";
-
+import {memberState} from "../context/member";
+import { swalClose, swalError } from "../utils/alert";
 import Swal from "sweetalert2";
+import { useRecoilState } from "recoil";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const loginState = {
+  username: "",
+  password: "",
+};
 
 export default function Login() {
+  const [formMember, setFormMember] = useState(loginState);
+  const [member, setMember] = useRecoilState(memberState);
   const router = useRouter();
-
-  const [username, setUsername] = useState([]);
-  const [password, setPassword] = useState([]);
-
-  const handleAddProduct = async (e) => {
-    e.preventDefault();
-    if (username === "user" && password === "1234") {
-      window.sessionStorage.setItem("login", "true");
+  console.log(formMember);
+  useEffect(() => {
+    swalClose();
+    if (member) {
       router.push("/");
-    } else
-      Swal.fire({
-        title: "Username หรือ Password ไม่ถูกต้อง",
-        width: 600,
-        padding: "3em",
-        background: '#fff url(/images/trees.png)',
-        backdrop: `
-        rgba(0,0,123,0.4)
-        url("/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `,
-      });
-  };
+    } else {
+      router.push("/login");
+    }
+  }, [member]);
+
   return (
     <div className="bg-sky-50 min-h-screen">
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
@@ -39,16 +36,42 @@ export default function Login() {
             <span className=" mt-3 px-5 text-3xl">Mee Vain</span>
           </div>
 
-          <form className="">
-            <p className="font-bold text-black mb-1">Email</p>
+          <form
+            className=""
+            onSubmit={(e) => {
+              e.preventDefault();
+
+              let config = {
+                method: "post",
+                url: "/api/login",
+
+                data: formMember,
+              };
+
+              axios(config)
+                .then((response) => {
+                  setMember(response?.data?.data);
+                  setFormMember("");
+                  router.push("/");
+                })
+                .catch((error) => {
+                  setFormMember("");
+                  swalError(error?.response?.data?.messages);
+                });
+            }}
+          >
+            <p className="font-bold text-black mb-1">Username</p>
             <input
               className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
               type="text"
-              name="user-name"
+              name="username"
+              id=""
+              placeholder="Username"
+              aria-label="Username"
               // placeholder="Username"
-              value={username}
+              value={formMember.username}
               onChange={(e) => {
-                setUsername(e.target.value);
+                setFormMember({ ...formMember, username: e.target.value });
               }}
             />
             <p className="font-bold italic text-black mb-1">Password</p>
@@ -56,10 +79,13 @@ export default function Login() {
               className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
               type="password"
               name="user-password"
+              placeholder="Password"
+              aria-label="Password"
               // placeholder="Password"
-              value={password}
+              // placeholder="Username"
+              value={formMember.password}
               onChange={(e) => {
-                setPassword(e.target.value);
+                setFormMember({ ...formMember, password: e.target.value });
               }}
             />
             <div className="flex items-center justify-between">
@@ -69,9 +95,6 @@ export default function Login() {
                 <button
                   className="font-bold text-indigo-600 hover:text-indigo-500"
                   type="button"
-                  onClick={() => {
-                    router.push("/register");
-                  }}
                 >
                   Register Now
                 </button>
@@ -83,27 +106,9 @@ export default function Login() {
               type="submit"
               value="submit"
               name="submit"
-              onClick={handleAddProduct}
             >
               <span className="text-l text-center "> Login </span>
             </button>
-            <div className=" text-center py-10 font-bold text-gray-400">or</div>
-            <div className="py-3">
-              <button className="w-full bg-blue-600  text-white shadow-lg  p-3 rounded-lg">
-                <span className="text-l text-center ">
-                  {" "}
-                  Sign in with Facebook{" "}
-                </span>
-              </button>
-            </div>
-            <div className="">
-              <button className="w-full bg-black text-white shadow-lg  p-3 rounded-lg">
-                <span className="text-l text-center ">
-                  {" "}
-                  Sign in with apple{" "}
-                </span>
-              </button>
-            </div>
           </form>
         </div>
       </div>

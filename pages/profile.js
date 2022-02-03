@@ -2,6 +2,10 @@ import React from "react";
 
 import Image from "next/image";
 import { FiLogIn } from "react-icons/fi";
+import { useRecoilValue } from 'recoil';
+import { memberState } from '../context/member';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import TopSimple from "../components/topSimple";
 
@@ -9,6 +13,13 @@ import Modaleditproflie from "../components/modaleditproflie";
 import Wahool from "../components/navbarwahoo";
 
 export default function Profile() {
+  const member = useRecoilValue(memberState);
+  const router = useRouter();
+  useEffect(() => {
+    if (!member) {
+      router.push('/login')
+    }
+  }, [member])
   return (
     <div className="bg-sky-100 min-h-screen ">
       <TopSimple />
@@ -50,10 +61,13 @@ export default function Profile() {
             <p className="col-span-1 font-bold italic pl-2 py-3">manager</p>
           </div>
           <div className=" h-0.5 bg-gray-400"></div>
-          <div className=" flex py-3">
+          <button className=" flex py-3" onClick={() => {
+          window.localStorage.clear();
+          window.location.reload();
+        }}>
             <FiLogIn size={25} />
             <span className=" text-center px-2 "> Sign out </span>
-          </div>
+          </button>
           <div className=" h-0.5 bg-gray-400"></div>
         </div>
       </div>
