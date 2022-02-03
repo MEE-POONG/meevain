@@ -1,19 +1,39 @@
 import Image from "next/image";
 import { MdOutlineCancel, MdVerified } from "react-icons/md";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 import ModalCreateGroup from "../components/ModalCreateGroup";
 import Wahool from "../components/navbarwahoo";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { data } from "autoprefixer";
+import { useRecoilValue } from "recoil";
+import { listGroupState } from "../context/listgroup";
+import Groups from "../components/groups";
+import { useRecoilState } from "recoil";
 
+const defaultGroupState = [];
 export default function Home() {
   // const [showModal, setShowModal] = React.useState(false);
+  // const [groupList, setGroupList] = useState(defaultGroupState);
+  // const listGroup = useRecoilValue(listGroupState);
+  // useEffect(() => {
+  //   getGroupData();
+  // }, []);
+
+  // const getGroupData = async () => {
+  //   try {
+  //     const { data } = await axios.get("/api/group");
+  //     setGroupList(data?.data);
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const handleShereLink = async (e) => {
     e.preventDefault();
-
-    // const LinkGroup = "https://www.facebook.com/watch/?v=462015502262754";
     const { value: link } = await Swal.fire({
       title: "คุณต้องการเข้าร่วม ?",
       // input: "text",
@@ -22,11 +42,6 @@ export default function Home() {
       showCancelButton: true,
       cancelButtonText: "ยกเลิก",
       confirmButtonText: "ขอเข้าร่วม",
-      // inputValidator: (value) => {
-      //   if (!value) {
-      //     return "You need to write something!";
-      //   }
-      // },
     });
 
     if (link) {
@@ -43,89 +58,18 @@ export default function Home() {
 
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-md w-full space-y-8 ">
-          <div
-            className="rounded-2xl shadow-lg  btn-secondary"
-            type="button"
-            onClick={() => {
-              router.push("/Status1");
-            }}
-          >
-            <div className="grid grid-cols-8 px-3 py-3">
-              <Image
-                src="/images/userprofile-01.webp"
-                alt=""
-                width={50}
-                height={50}
-                className="mt-3"
-              />
-              <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
-                Bazz{" "}
-                <div className="badge ml-2 text-xs badge-outline p-2">
-                  เข้าร่วมแล้ว <MdVerified className=" ml-1" />{" "}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="rounded-2xl shadow-lg text-white btn-accent"
-            type="button"
-            onClick={handleShereLink}
-          >
-            <div className="grid grid-cols-8 px-3 py-3">
-              <Image
-                src="/images/userprofile-01.webp"
-                alt=""
-                width={50}
-                height={50}
-                className="mt-3"
-              />
-              <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
-                Jame{" "}
-                <div className="badge ml-2 text-xs badge-outline p-2">
-                  รอการยืนยัน
-                </div>
-              </div>
-            </div>
-          </div>
+          <Groups/>
           <div className="mt-5 bg-gradient-to-r bg-gray-300  h-0.5"></div>
           <button
             className="w-full btn-primary text-white shadow-lg  p-3 rounded-lg mt-5"
             type="button"
-            // onClick={handleShereLink}
+            // onClick={getGroupData}
           >
-            <span className="text-xl text-center font-bold "> Join Group </span>
+            <span className="text-xl text-center font-bold ">{} Join Group </span>
           </button>
         </div>
       </div>
       <Wahool />
-      {/* {showModal ? (
-        <div className="px-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  shadow-lg backdrop-filter backdrop-blur-md ">
-          <div className="w-full text-gray-500 max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
-            <MdOutlineCancel
-              size={24}
-              className="float-right cursor-pointer hover:shadow-2xl hover:scale-105 transform transition-all duration-500"
-              type="button"
-              onClick={() => setShowModal(false)}
-            />
-            <div className="text-center flex-auto justify-center mt-6  ">
-              <h2 className="text-2xl text-center font-bold text-black">Join Group</h2>
-              <div className="py-5">
-                <input
-                  className="appearance-none block text-center w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
-                  type="text"
-                  placeholder="Link Group"
-                />
-              </div>
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-cyan-300  text-white shadow-lg h-12 rounded-lg ">
-                <span className="text-xl text-center font-bold ">
-                  {" "}
-                  Join now{" "}
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}{" "} */}
     </div>
   );
 }
