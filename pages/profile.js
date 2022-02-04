@@ -2,10 +2,13 @@ import React from "react";
 
 import Image from "next/image";
 import { FiLogIn } from "react-icons/fi";
-import { useRecoilValue } from 'recoil';
-import { memberState } from '../context/member';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useRecoilValue } from "recoil";
+import { memberState } from "../context/member";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useState } from "react";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 import TopSimple from "../components/topSimple";
 
@@ -15,11 +18,26 @@ import Wahool from "../components/navbarwahoo";
 export default function Profile() {
   const member = useRecoilValue(memberState);
   const router = useRouter();
+  const [memberData, setMemberData] = useState();
+  useEffect(() => {
+    getMemberData();
+
+  }, []);
+  const getMemberData = async () => {
+    try {
+      const { data } = await axios.get("/api/member-register/");
+      setMemberData(data?.data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     if (!member) {
-      router.push('/login')
+      router.push("/login");
     }
-  }, [member])
+  }, [member]);
   return (
     <div className="bg-sky-100 min-h-screen ">
       <TopSimple />
@@ -35,43 +53,49 @@ export default function Profile() {
         <div className="text-center mt-2">บาสน้อยหอยสัง</div>
         <Modaleditproflie />
 
-        <div className="mt-10 m-6 mb-8">
-          <div className="grid grid-cols-2">
-            <p className="col-span-1 font-bold italic pl-2 py-3">Firstname</p>
-            <p className="col-span-1 font-bold italic pl-2 py-3">เจมส์</p>
+          <div key={memberData} className="mt-10 m-6 mb-8">
+            <div className="grid grid-cols-2">
+              <p className="col-span-1 font-bold italic pl-2 py-3">Firstname</p>
+              {/* <p className="col-span-1 font-bold italic pl-2 py-3">{memberData.firstname}</p> */}
+            </div>
+            <div className=" h-0.5 bg-gray-400"></div>
+            <div className="grid grid-cols-2">
+              <p className="col-span-1 font-bold italic pl-2 py-3">Lastname</p>
+              {/* <p className="col-span-1 font-bold italic pl-2 py-3">{memberData.lastname}</p> */}
+            </div>
+            <div className=" h-0.5 bg-gray-400"></div>
+            <div className="grid grid-cols-2">
+              <p className="col-span-1 font-bold italic pl-2 py-3">Nickname</p>
+              <p className="col-span-1 font-bold italic pl-2 py-3">หมาเจม</p>
+            </div>
+            <div className=" h-0.5 bg-gray-400"></div>
+            <div className="grid grid-cols-2">
+              <p className="col-span-1 font-bold italic pl-2 py-3">Tel</p>
+              <p className="col-span-1 font-bold italic pl-2 py-3">
+                1234667989
+              </p>
+            </div>
+            <div className=" h-0.5 bg-gray-400"></div>
+            <div className="grid grid-cols-2">
+              <p className="col-span-1 font-bold italic pl-2 py-3">Position</p>
+              <p className="col-span-1 font-bold italic pl-2 py-3">manager</p>
+            </div>
+            <div className=" h-0.5 bg-gray-400"></div>
+            <button
+              className=" flex py-3"
+              onClick={() => {
+                window.localStorage.clear();
+                window.location.reload();
+              }}
+            >
+              <FiLogIn size={25} />
+              <span className=" text-center px-2 "> Sign out </span>
+            </button>
+            <div className=" h-0.5 bg-gray-400"></div>
           </div>
-          <div className=" h-0.5 bg-gray-400"></div>
-          <div className="grid grid-cols-2">
-            <p className="col-span-1 font-bold italic pl-2 py-3">Lastname</p>
-            <p className="col-span-1 font-bold italic pl-2 py-3">หมา</p>
-          </div>
-          <div className=" h-0.5 bg-gray-400"></div>
-          <div className="grid grid-cols-2">
-            <p className="col-span-1 font-bold italic pl-2 py-3">Nickname</p>
-            <p className="col-span-1 font-bold italic pl-2 py-3">หมาเจม</p>
-          </div>
-          <div className=" h-0.5 bg-gray-400"></div>
-          <div className="grid grid-cols-2">
-            <p className="col-span-1 font-bold italic pl-2 py-3">Tel</p>
-            <p className="col-span-1 font-bold italic pl-2 py-3">1234667989</p>
-          </div>
-          <div className=" h-0.5 bg-gray-400"></div>
-          <div className="grid grid-cols-2">
-            <p className="col-span-1 font-bold italic pl-2 py-3">Position</p>
-            <p className="col-span-1 font-bold italic pl-2 py-3">manager</p>
-          </div>
-          <div className=" h-0.5 bg-gray-400"></div>
-          <button className=" flex py-3" onClick={() => {
-          window.localStorage.clear();
-          window.location.reload();
-        }}>
-            <FiLogIn size={25} />
-            <span className=" text-center px-2 "> Sign out </span>
-          </button>
-          <div className=" h-0.5 bg-gray-400"></div>
-        </div>
+
       </div>
-      <Wahool/>
+      <Wahool />
     </div>
   );
 }

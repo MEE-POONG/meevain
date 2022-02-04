@@ -1,7 +1,7 @@
 import dbConnect from "../../lib/dbConnect";
 
 import Member from "../../models/member";
-import { comparePassword } from "../../utils/encrypt";
+// import { comparePassword } from "../../utils/encrypt";
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       try {
         const { username, password } = req.body;
         const members = await Member.findOne({ username });
-        const validPassword = await comparePassword(password, members.password);
+        const validPassword = await Member.findOne({ password });
         if (!validPassword) {
           res.status(400).end({ success: false, messages: "password invalid" });
         }

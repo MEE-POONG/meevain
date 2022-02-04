@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { useRouter } from 'next/router';
 import { BsCalendarCheck } from "react-icons/bs";
 import { comparePassword } from "../utils/encrypt";
 import axios from "axios";
@@ -18,7 +19,7 @@ export default function Register() {
   const [formRegister, setFormRegister] = useState(memberState);
 
   const { username, password, firstname, lastname, tel } = formRegister;
-
+  const router = useRouter();
   const setMemberData = async () => {
     try {
       await axios.post("/api/member-register", formRegister);
@@ -47,6 +48,7 @@ export default function Register() {
       showConfirmButton: false,
       timer: 2000,
     });
+    await router.push('/login')
   };
   const validationMember = () => {
     if (!username || !password || !firstname || !lastname || !tel) {
