@@ -3,12 +3,11 @@ import Image from "next/image";
 import { MdOutlineCancel, MdContentCopy } from "react-icons/md";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
-import { FaBlind, FaUserPlus } from "react-icons/fa";
+import { FaUserPlus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { data } from "autoprefixer";
-import colorNames from "daisyui/colors/colorNames";
+
 // import InputColor from 'react-input-color';
 
 const groupState = {
@@ -130,35 +129,33 @@ export default function ModalCreateGroup() {
 
                         {/* <Disclosure.Panel className="px-4 pt-2 pb-2 ">
                           </Disclosure.Panel> */}
-                           </>
-                          )}
+                      </>
+                    )}
                   </Disclosure>
-                        <select
-                          className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between"
-                          onChange={(e) =>
-                            setFormCreateGroup({
-                              ...formCreateGroup,
-                              color: e.target.value,
-                            })
-                          }
-                          id="color"
-                        >
-                          <option
-                            className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
-                            value={red}
-                          ></option>
-                          <option
-                            className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                            value={blue}
-                          ></option>
-                          <option className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                          <option className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                          <option className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                          <option className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                          <option className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                        </select>
-                     
-                    
+                  <select
+                    className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between"
+                    onChange={(e) =>
+                      setFormCreateGroup({
+                        ...formCreateGroup,
+                        color: e.target.value,
+                      })
+                    }
+                    id="color"
+                  >
+                    <option
+                      className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
+                      value={red}
+                    ></option>
+                    <option
+                      className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                      value={blue}
+                    ></option>
+                    <option className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                    <option className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                    <option className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                    <option className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                    <option className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                  </select>
 
                   <button
                     className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
