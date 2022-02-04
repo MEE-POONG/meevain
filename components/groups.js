@@ -11,6 +11,7 @@ export default function Groups() {
   const [groupList, setGroupList] = useState(defaultGroupState);
   // const listGroup = useRecoilValue(listGroupState);
   // console.log(groupList);
+  
 
   useEffect(() => {
     getGroupData();
@@ -26,12 +27,14 @@ export default function Groups() {
     }
   };
   return (
+    
     <div>
       {groupList?.map((groupList) => (
         <div
           key={groupList}
-          className="rounded-2xl shadow-lg text-white btn-secondary mb-2"
+          className="rounded-2xl shadow-lg text-white mb-2"
           type="button"
+          style={{ backgroundColor: groupList.color }}
         >
           <div className="grid grid-cols-8 px-3 py-3">
             <Image

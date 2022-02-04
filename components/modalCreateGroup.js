@@ -3,24 +3,26 @@ import Image from "next/image";
 import { MdOutlineCancel, MdContentCopy } from "react-icons/md";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/solid";
-import { FaUserPlus } from "react-icons/fa";
+import { FaBlind, FaUserPlus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useSetRecoilState } from "recoil";
-import { listGroupState } from "../context/listgroup";
-import { color } from "@mui/system";
 import { data } from "autoprefixer";
+import colorNames from "daisyui/colors/colorNames";
+// import InputColor from 'react-input-color';
 
 const groupState = {
   name: "",
+  color: "",
 };
 
+const red = "#FF0000";
+const blue = "#ffff";
 
 export default function ModalCreateGroup() {
   const [showModalCreateGroup, setShowModalCreateGroup] = useState();
   const [formCreateGroup, setFormCreateGroup] = useState(groupState);
-  
+
   const { name } = formCreateGroup;
   // const setListGroup = useSetRecoilState(listGroupState);
 
@@ -45,7 +47,7 @@ export default function ModalCreateGroup() {
     const setDataError = await setGroupData();
     if (setDataError) return;
 
-    setFormCreateGroup(groupState);
+    // setFormCreateGroup(groupState);
     // console.log(formCreateGroup);
 
     await Swal.fire({
@@ -55,21 +57,16 @@ export default function ModalCreateGroup() {
       timer: 2000,
     });
   };
-<<<<<<< Updated upstream
-  const validationMember = () => {
-    if (!name || !color) {
-=======
   const validationGroup = () => {
     if (!name) {
->>>>>>> Stashed changes
       return Swal.fire({
         icon: "error",
         title: "กรอกข้อมูลไม่ครบ",
       });
     }
   };
-  
-  console.log();
+
+  console.log(formCreateGroup);
   return (
     <div>
       <div className="">
@@ -101,90 +98,9 @@ export default function ModalCreateGroup() {
                   height={100}
                 />
               </div>
-<<<<<<< Updated upstream
-              <form onSubmit={handelSubmit}>
-              <input
-                className="w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
-                type="text"
-                placeholder="Name Group"
-                onChange={(e) =>
-                  setFormCreateGroup({
-                    ...formCreateGroup,
-                    name: e.target.value,
-                  })
-                }
-                value={name}
-                id="name"
-              />
-              <Disclosure>
-                {({ open }) => (
-                  <>
-                    <Disclosure.Button className="flex justify-between px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
-                      <span>Group color</span>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? "transform rotate-180" : ""
-                        } w-5 h-5 text-blue-500`}
-                      />
-                    </Disclosure.Button>
-                    <Disclosure.Panel className="px-4 pt-2 pb-2 ">
-                      <div className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between">
-                        <div
-                          className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
-                         
-                          value="#ffff"
-                          onChange={(e) =>
-                            setFormCreateGroup({
-                              ...formCreateGroup,
-                              color: e.target.value,
-                            })
-                          }
-                          id="color"
-                        ></div>
-                        <div
-                          className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                          type="button"
-                        ></div>
-                        <div
-                          className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                          type="button"
-                        ></div>
-                        <button
-                          className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                          type="button"
-                        ></button>
-                        <button
-                          className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                          type="button"
-                        ></button>
-                        <button
-                          className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                          type="button"
-                        ></button>
-                        <button
-                          className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                          type="button"
-                        ></button>
-                      </div>
-                    </Disclosure.Panel>
-                  </>
-                )}
-              </Disclosure>
-              <button
-                className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
-                type="submit"
-                onClick={() => {
-                  setListGroup()
-                  router.push("/Status1");
-                }}
-              >
-                <span className="text-l text-center"> Create </span>
-              </button>
-            </form>
-=======
             </div>
             <div>
-              <form className="" onClick={handelSubmit}>
+              <form className="" onSubmit={handelSubmit}>
                 <div>
                   <input
                     className="w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300"
@@ -199,13 +115,11 @@ export default function ModalCreateGroup() {
                     value={name}
                     id="name"
                   />
+
                   <Disclosure>
                     {({ open }) => (
                       <>
-                        <Disclosure.Button
-                          className="flex justify-between px-4 py-2 text-sm font-medium text-left "
-                          
-                        >
+                        <Disclosure.Button className="flex justify-between px-4 py-2 text-sm font-medium text-left ">
                           <span>Group color</span>
                           <ChevronUpIcon
                             className={`${
@@ -213,42 +127,39 @@ export default function ModalCreateGroup() {
                             } w-5 h-5 text-blue-500`}
                           />
                         </Disclosure.Button>
-                        <Disclosure.Panel className="px-4 pt-2 pb-2 ">
-                          <div className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between">
-                            <button
-                              className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
-                              type="button"
-                              
-                            ></button>
-                            <button
-                              className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                              type="button"
-                            ></button>
-                            <button
-                              className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                              type="button"
-                            ></button>
-                            <button
-                              className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                              type="button"
-                            ></button>
-                            <button
-                              className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                              type="button"
-                            ></button>
-                            <button
-                              className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                              type="button"
-                            ></button>
-                            <button
-                              className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"
-                              type="button"
-                            ></button>
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
+
+                        {/* <Disclosure.Panel className="px-4 pt-2 pb-2 ">
+                          </Disclosure.Panel> */}
+                           </>
+                          )}
                   </Disclosure>
+                        <select
+                          className=" border shadow-lg rounded-lg  px-4 py-2 flex justify-between"
+                          onChange={(e) =>
+                            setFormCreateGroup({
+                              ...formCreateGroup,
+                              color: e.target.value,
+                            })
+                          }
+                          id="color"
+                        >
+                          <option
+                            className="bg-red-600 text-white shadow-lg rounded-full p-3 hover:ring "
+                            value={red}
+                          ></option>
+                          <option
+                            className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
+                            value={blue}
+                          ></option>
+                          <option className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                          <option className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                          <option className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                          <option className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                          <option className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                        </select>
+                     
+                    
+
                   <button
                     className="w-full bg-gradient-to-r from-cyan-600 to-cyan-400 text-white shadow-lg mt-2  p-3 rounded-lg"
                     type="submit"
@@ -261,7 +172,6 @@ export default function ModalCreateGroup() {
                 </div>
               </form>
             </div>
->>>>>>> Stashed changes
           </div>
         </div>
       ) : null}{" "}
