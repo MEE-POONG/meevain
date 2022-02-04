@@ -8,68 +8,48 @@ import { data } from "autoprefixer";
 
 const defaultGroupState = [];
 export default function Groups() {
-    
-   
-    const [groupList, setGroupList] = useState(defaultGroupState);
-    // const listGroup = useRecoilValue(listGroupState);
-    console.log(groupList);
-    useEffect(() => {
-      getGroupData();
-    }, []);
-  
-    const getGroupData = async () => {
-      try {
-        const { data } = await axios.get("/api/group");
-        setGroupList(data?.data);
-        console.log(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const [groupList, setGroupList] = useState(defaultGroupState);
+  // const listGroup = useRecoilValue(listGroupState);
+  // console.log(groupList);
+
+  useEffect(() => {
+    getGroupData();
+  }, []);
+
+  const getGroupData = async () => {
+    try {
+      const { data } = await axios.get("/api/group");
+      setGroupList(data?.data);
+      // console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
-      <div className="rounded-2xl shadow-lg  btn-secondary" type="button">
-      {groupList?.map((groupList)=>(
-
-      
-        <div key={groupList} className="grid grid-cols-8 px-3 py-3 m-2">
-          <Image
-            src="/images/userprofile-01.webp"
-            alt=""
-            width={50}
-            height={50}
-            className="mt-3"
-          />
-          <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
-            {groupList.name}
-            <div className="badge ml-2 text-xs badge-outline p-2">
-              เข้าร่วมแล้ว <MdVerified className=" ml-1" />{" "}
+      {groupList?.map((groupList) => (
+        <div
+          key={groupList}
+          className="rounded-2xl shadow-lg text-white btn-secondary mb-2"
+          type="button"
+        >
+          <div className="grid grid-cols-8 px-3 py-3">
+            <Image
+              src="/images/userprofile-01.webp"
+              alt=""
+              width={50}
+              height={50}
+              className="mt-3"
+            />
+            <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
+              {groupList.name}
+              <div className="badge ml-2 text-xs badge-outline p-2">
+                เข้าร่วมแล้ว <MdVerified className=" ml-1" />
+              </div>
             </div>
           </div>
         </div>
-         ))}
-      </div>
-      
-      <div
-        className="rounded-2xl shadow-lg text-white btn-accent"
-        type="button"
-      >
-        <div className="grid grid-cols-8 px-3 py-3">
-          <Image
-            src="/images/userprofile-01.webp"
-            alt=""
-            width={50}
-            height={50}
-            className="mt-3"
-          />
-          <div className="col-span-7 px-5 mt-2 text-xl font-bold text-white">
-            Jame{" "}
-            <div className="badge ml-2 text-xs badge-outline p-2">
-              รอการยืนยัน
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

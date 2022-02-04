@@ -1,16 +1,16 @@
-import { atom } from 'recoil';
+// import { atom } from 'recoil';
 
-import { recoilPersist } from 'recoil-persist';
+// import { recoilPersist } from 'recoil-persist';
 
-const { persistAtom } = recoilPersist();
+// const { persistAtom } = recoilPersist();
 
-const listGroupState = atom({
-    key: 'listGroup',
-    default: { 
+// const listGroupState = atom({
+//     key: 'listGroup',
+//     default: { 
       
-      name: "",
-      color:""
-    } ,
-    effects_UNSTABLE: [persistAtom]
-  });
-  export { listGroupState };
+//       name: "",
+//       color:""
+//     } ,
+//     effects_UNSTABLE: [persistAtom]
+//   });
+//   export { listGroupState };
