@@ -41,7 +41,7 @@ export default function Profile() {
     <div className="bg-sky-100 min-h-screen ">
       <TopSimple />
       {memberData?.map((memberData) => (
-        <div key={memberData} className=" mx-auto max-w-lg text-black  ">
+        <div key={memberData._id} className=" mx-auto max-w-lg text-black  ">
           <div className=" flex justify-center mx-auto  w-2/5 mt-10  ">
             <Image
               src="/images/userprofile-01.webp"
