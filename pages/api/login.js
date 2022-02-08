@@ -9,6 +9,14 @@ export default async function handler(req, res) {
   await dbConnect();
 
   switch (method) {
+    case 'GET':
+        try {
+            const member = await Member.fineById(req.query.id)
+            res.status(200).json({ success: true, data: member })
+        } catch (error) {
+            res.status(400).json({ success: false })
+        }
+        break;
     case "POST":
       try {
         const { username, password } = req.body;
@@ -21,8 +29,8 @@ export default async function handler(req, res) {
           { _id: members._id },
           { password: 0 }
         );
-
         res.status(200).json({ success: true, data: member });
+
       } catch (error) {
         res.status(400).json({
           success: false,

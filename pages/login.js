@@ -18,6 +18,7 @@ export default function Login() {
   const [member, setMember] = useRecoilState(memberState);
   const router = useRouter();
   console.log(formMember);
+
   useEffect(() => {
     swalClose();
     if (member) {
@@ -47,7 +48,6 @@ export default function Login() {
 
                 data: formMember,
               };
-
               axios(config)
                 .then((response) => {
                   setMember(response?.data?.data);

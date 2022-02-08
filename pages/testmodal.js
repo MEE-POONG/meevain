@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import NameDisplay from "../components/abcd";
+import TempCelsius from "../components/abcd";
+import Abcd from '../components/abcd'
 
 const initialState = [
   {
@@ -68,6 +71,10 @@ export default function App() {
           />
         );
       })}
+
+      {/* <TempCelsius/> */}
+      <NameDisplay/>
+      
       
     </div>
   );

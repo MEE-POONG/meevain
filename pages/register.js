@@ -149,7 +149,9 @@ export default function Register() {
           </button>
 
           <div className=" text-center m-2">
-            <span className=" text-blue-700 text-center" type="button">
+            <span className=" text-blue-700 text-center" type="button" onClick={() => {
+              router.push('/login');
+            }}>
               Already have an account sign in ?
             </span>
             {/* <TestData data={memberList} /> */}

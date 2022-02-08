@@ -6,6 +6,12 @@ const { persistAtom } = recoilPersist();
 const memberState = atom({
   key: "memberState",
   default: null,
+    // username:"",
+    // firstname:"",
+    // lastname:"",
+    // tel:""
+
+  
   effects_UNSTABLE: [persistAtom],
 });
 
