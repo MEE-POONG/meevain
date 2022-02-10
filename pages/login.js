@@ -21,12 +21,9 @@ export default function Login() {
 
   useEffect(() => {
     swalClose();
-    if (member) {
-      router.push("/");
-    } else {
-      router.push("/login");
-    }
-  }, [member]);
+    window.localStorage.clear();
+  }, []);
+  
 
   return (
     <div className="bg-sky-50 min-h-screen">
@@ -51,9 +48,11 @@ export default function Login() {
               axios(config)
                 .then((response) => {
                   setMember(response?.data?.data);
+                  // console.log(response?.data?.data);
                   setFormMember("");
                   router.push("/");
                 })
+                
                 .catch((error) => {
                   setFormMember("");
                   swalError(error?.response?.data?.messages);
@@ -95,6 +94,9 @@ export default function Login() {
                 <button
                   className="font-bold text-indigo-600 hover:text-indigo-500"
                   type="button"
+                  onClick={() => {
+                    router.push("/register");
+                  }}
                 >
                   Register Now
                 </button>

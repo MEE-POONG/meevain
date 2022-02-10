@@ -26,6 +26,7 @@ export default function Groups() {
       console.log(error);
     }
   };
+  console.log();
   return (
     
     <div>

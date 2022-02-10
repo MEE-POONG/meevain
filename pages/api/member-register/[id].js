@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
       case 'PUT':
         try {
-            const members = await Member.findByIdAndUpdate(req.query.id, {...req.body,
+            const members = await Member.findByIdAndUpdate(req.query.id,req.body,{
                 createdBy: mongoose.Types.ObjectId(req.body.createdBy),
                 updatedBy: mongoose.Types.ObjectId(req.body.updatedBy)
             }, { upsert: true });

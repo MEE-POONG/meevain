@@ -14,8 +14,7 @@ import Groups from "../components/groups";
 import { useRecoilState } from "recoil";
 import { memberState } from "../context/member";
 
-
-const defaultUserLoginState = [];
+// const defaultUserLoginState = [];
 export default function Home() {
   // const [userLogin, setUserlogin] = useState(defaultUserLoginState);
   const member = useRecoilValue(memberState);
@@ -58,15 +57,12 @@ export default function Home() {
 
   return (
     <div className="bg-sky-100 w-screen min-h-screen">
-      
-        <p
-          key={5}
-          className="py-7 font-bold text-2xl text-center text-neutral-focus  "
-        >
-          <span>สวัสดีคุณ {member.username}</span>
-          
-        </p>
-    
+      <p
+        key={member}
+        className="py-7 font-bold text-2xl text-center text-neutral-focus  "
+      >
+        <span>สวัสดีคุณ {member.username}</span>
+      </p>
 
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-md w-full space-y-8 ">

@@ -7,6 +7,10 @@ import { FaUserPlus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useRecoilValue } from "recoil";
+import { memberState } from "../context/member";
+
+
 
 // import InputColor from 'react-input-color';
 
@@ -15,12 +19,31 @@ const groupState = {
   color: "",
 };
 
-const red = "#FF0000";
-const blue = "#ffff";
+const red = "##C0392B ";
+const red2 ="#E74C3C"
+const purple ="#9B59B6"
+const purple2  ="#8E44AD"
+const blue ="#2980B9"
+const blue2 ="#3498DB"
+const green ="#1ABC9C"
+const green2 ="#16A085"
+const lime ="##27AE60"
+const lime2 ="#2ECC71"
+const yellow ="#F1C40F"
+const orange ="#F39C12"
+const orange2 ="#E67E22"
+const gray ="#BDC3C7"
+const gray2 ="#95A5A6"
+const gray3 ="#7F8C8D"
+const indigo ="##34495E"
+const indigo2 ="##2C3E50"
+
 
 export default function ModalCreateGroup() {
   const [showModalCreateGroup, setShowModalCreateGroup] = useState();
   const [formCreateGroup, setFormCreateGroup] = useState(groupState);
+
+  const member = useRecoilValue(memberState);
 
   const { name } = formCreateGroup;
   // const setListGroup = useSetRecoilState(listGroupState);
@@ -65,7 +88,7 @@ export default function ModalCreateGroup() {
     }
   };
 
-  console.log(formCreateGroup);
+  // console.log(formCreateGroup);
   return (
     <div>
       <div className="">
@@ -126,7 +149,6 @@ export default function ModalCreateGroup() {
                             } w-5 h-5 text-blue-500`}
                           />
                         </Disclosure.Button>
-
                         {/* <Disclosure.Panel className="px-4 pt-2 pb-2 ">
                           </Disclosure.Panel> */}
                       </>
@@ -150,11 +172,11 @@ export default function ModalCreateGroup() {
                       className="bg-yellow-600 text-white shadow-lg rounded-full p-3 hover:ring"
                       value={blue}
                     ></option>
-                    <option className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                    <option className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                    <option className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                    <option className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
-                    <option className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"></option>
+                    <option className="bg-green-600 text-white shadow-lg rounded-full p-3 hover:ring" value={red2}></option>
+                    <option className="bg-blue-600 text-white shadow-lg rounded-full p-3 hover:ring"value={purple}></option>
+                    <option className="bg-sky-600 text-white shadow-lg rounded-full p-3 hover:ring"value={purple2}></option>
+                    <option className="bg-cyan-600 text-white shadow-lg rounded-full p-3 hover:ring"value={blue}></option>
+                    <option className="bg-orange-600 text-white shadow-lg rounded-full p-3 hover:ring"value={orange}></option>
                   </select>
 
                   <button

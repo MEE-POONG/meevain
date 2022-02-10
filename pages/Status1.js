@@ -7,15 +7,18 @@ import { FaRegComment } from "react-icons/fa";
 import { useRouter } from "next/router";
 import TopInGroup from "../components/TopInGroup"
 import Wahool from "../components/navbarwahoo";
+import { useRecoilValue } from "recoil";
+import { memberState } from "../context/member";
 
 
 export default function Status1() {
   const [count1, setCount1] = useState();
+  const member = useRecoilValue(memberState);
+
   const router = useRouter();
   return (
     <div className="bg-sky-100 min-h-screen ">
 <TopInGroup/>
-
       <div className=" mx-auto max-w-lg text-black  ">
         <div className=" text-center m-4">
           <button
@@ -33,8 +36,8 @@ export default function Status1() {
             <IoPersonCircleOutline size={50} />
             <input
               className=" border-2 rounded-lg  w-full p-2 m-1 h-10 shadow-lg"
-              placeholder="คุณคิดอะไรอยู่"
-            />{" "}
+              placeholder={"คุณคิดอะไรอยู่"+member.firstname}
+            />
           </div>
           <div className=" text-right">
             <button className=" text-white bg-blue-400 shadow-lg px-4 py-1 m-1 rounded-xl ">
@@ -47,7 +50,7 @@ export default function Status1() {
           <div className="border-2 rounded-xl py-3 px-5 m-6 bg-white shadow-2xl">
             <div className="flex">
               <IoPersonCircleOutline size={40} />
-              <div className="mt-2 px-1">บาสชามะลิ </div>
+              <div className="mt-2 px-1">{member.firstname}</div>
             </div>
             <div className="px-2 py-2">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y

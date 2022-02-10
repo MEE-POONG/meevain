@@ -6,7 +6,8 @@ const MemberSchema = new mongoose.Schema({
   firstname: String,
   lastname: String,
   tel: Number,
-  img: String
+  img: String,
+  memberId:mongoose.Types.ObjectId
 
 });
 

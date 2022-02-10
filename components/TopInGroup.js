@@ -4,7 +4,14 @@ import ModalDeletepersonByGroup from "./modalDeletepersonByGroup";
 import Image from "next/image";
 import Swal from "sweetalert2";
 import {FaShareAlt} from 'react-icons/fa'
+import { useRecoilValue } from "recoil";
+import { memberState } from "../context/member";
+
+
 export default function TopInGroup() {
+  const member = useRecoilValue(memberState);
+
+  
   const handleCreateLink = async (e) => {
     e.preventDefault();
     const LinkGroup = "https://www.facebook.com/watch/?v=462015502262754";
@@ -29,6 +36,7 @@ export default function TopInGroup() {
       Swal.fire({ icon: "success", title: `คัดลอกสำเร็จ` });
     }
   };
+  console.log(member);
   return (
     <div className="py-2 px-5 w-full shadow-2xl bg-gradient-to-r from-cyan-600 to-cyan-300 text-white ">
       <div className="mx-auto max-w-lg">
@@ -37,13 +45,12 @@ export default function TopInGroup() {
             <Image src="/images/userprofile-01.webp" width={40} height={40} />
           </div>
           <div className="col-span-5 px-2 mt-2 text-2xl  font-bold ">
-            บาส
+            {member.username}
           </div>
           <button className="col-span-1 place-self-center mr-4 font-bold float-right text-black mt-2">
             <FaShareAlt size={32} type="button"
             onClick={handleCreateLink}/>
           </button>
-          
           <div
             className="col-span-1 place-self-center  flex justify-center  font-bold float-right"
             type="button"

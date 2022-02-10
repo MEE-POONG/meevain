@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
   switch (method) {
     case "GET":
-      try {
+      try {   
         const members = await Member.find({});
         res.status(200).json({ success: true, data: members });
       } catch (error) {

@@ -5,18 +5,19 @@ import { useRouter } from 'next/router';
 import { BsCalendarCheck } from "react-icons/bs";
 import { comparePassword } from "../utils/encrypt";
 import axios from "axios";
-
-const memberState = {
-  username: "",
-  password: "",
-  firstname: "",
-  lastname: "",
-  tel: "",
-  img: "",
-};
+import { useRecoilState } from "recoil";
+import { memberState } from "../context/member";
+// const memberState = {
+//   username: "",
+//   password: "",
+//   firstname: "",
+//   lastname: "",
+//   tel: "",
+//   img: "",
+// };
 // const defaultMemberState = [];
 export default function Register() {
-  const [formRegister, setFormRegister] = useState(memberState);
+  const [formRegister, setFormRegister] = useRecoilState(memberState);
 
   const { username, password, firstname, lastname, tel } = formRegister;
   const router = useRouter();
