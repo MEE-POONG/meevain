@@ -2,32 +2,34 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { HiOutlinePencilAlt } from "react-icons/hi";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { memberState } from "../context/member";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { data } from "autoprefixer";
 
 // const memberState = {
-  
+
 //   firstname: "",
 //   lastname: "",
 //   tel: "",
 // };
 
-export default function ModalEdit( data,getMemberDataById) {
+export default function ModalEdit(data) {
   console.log(data);
   const [showModalEditProflie, setShowModalEditProflie] = useState();
-  const [formedit, setFormEdit] = useState(memberState);
-    const member = useRecoilValue(memberState);
+  const [formedit, setFormEdit] = useRecoilState(memberState);
+
+  // console.log(formedit);
+  // const member = useRecoilValue(memberState);
 
   // const [isEdit, setIsEdit] = useState(false);
   // const { firstname, lastname, tel } = formedit;
 
   // useEffect(() => {
   //   // getMemberDataById(member._id);
-  //   // setFormEdit(member._id)
-    
+  //   setFormEdit(member._id)
+
   // }, []);
 
   // const getMemberDataById = async (id) => {
@@ -44,20 +46,20 @@ export default function ModalEdit( data,getMemberDataById) {
   //     console.log(error);
   //   }
   // };
-  const setDataMember = async () => {
-    try {
-       (isEdit) 
-        await axios.put("/api/member-register" + member._id, formedit);
-      
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "พังยับ",
-        text: "พังอะครับพรี่ ติดต่อแอดมินด่วนๆ!",
-      });
-      return true;
-    }
-  };
+  // const setDataMember = async () => {
+  //   try {
+  //      (isEdit)
+  //       await axios.put("/api/member-register" + member._id, formedit);
+
+  //   } catch (error) {
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "พังยับ",
+  //       text: "พังอะครับพรี่ ติดต่อแอดมินด่วนๆ!",
+  //     });
+  //     return true;
+  //   }
+  // };
   // const validationMember = () => {
   //   if (!firstname || !lastname || !tel) {
   //     return Swal.fire({
@@ -130,54 +132,62 @@ export default function ModalEdit( data,getMemberDataById) {
                               firstname: e.target.value,
                             })
                           }
-                          // value={firstname}
+                          value={formedit.firstname}
                           id="firstname"
+                          
                         />
                       </div>
+                      
                       {/* {member.firstname} */}
                     </div>
-                    
-                    <><div className=" grid grid-cols-2 m-5">
+                    <>
+                      <div className=" grid grid-cols-2 m-5">
                         <div className=" row-span-1">
-                          <p className="font-bold italic mt-2 text-left">
+                          <p className="font-bold italic mt-2 text-left">   
                             Lastname
                           </p>
-                          
                         </div>
 
                         <div className=" row-span-1">
                           <input
                             className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
                             type="text"
-                            onChange={(e) => setFormEdit({
-                              ...formedit,
-                              lastname: e.target.value,
-                            })}
-                            // value={lastname}
-                            id="lastname" />
+                            onChange={(e) =>
+                              setFormEdit({
+                                ...formedit,
+                                lastname: e.target.value,
+                              })
+                            }
+                            value={formedit.lastname}
+                            id="lastname"
+                          />
                         </div>
                         {/* {member.lastname} */}
-
-                      </div><div className=" grid grid-cols-2 m-5">
-                          <div className=" row-span-1">
-                            <p className="font-bold italic mt-2 text-left">Tel</p>
-                          </div>
-                          <div className=" row-span-1">
-                            <input
-                              className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
-                              type="number"
-                              onChange={(e) => setFormEdit({ ...formedit, tel: e.target.value })}
-                              // value={tel}
-                              id="tel" />
-                          </div>
-                          {/* {member.tel} */}
-                        </div><button
-                          className="w-full bg-cyan-500   text-white shadow-lg  p-3 rounded-lg"
-                          type="submit"
-                        >
-                          <span className=" text-center "> ยืนยัน </span>
-                        </button></>
-                
+                      </div>
+                      <div className=" grid grid-cols-2 m-5">
+                        <div className=" row-span-1">
+                          <p className="font-bold italic mt-2 text-left">Tel</p>
+                        </div>
+                        <div className=" row-span-1">
+                          <input
+                            className="appearance-none block w-full bg-gray-50 text-gray-700 border rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-300 "
+                            type="number"
+                            onChange={(e) =>
+                              setFormEdit({ ...formedit, tel: e.target.value })
+                            }
+                            value={formedit.tel}
+                            id="tel"
+                          />
+                        </div>
+                        {/* {member.tel} */}
+                      </div>
+                      <button
+                        className="w-full bg-cyan-500   text-white shadow-lg  p-3 rounded-lg"
+                        type="submit"
+                      >
+                        <span className=" text-center "> ยืนยัน </span>
+                      </button>
+                    </>
                   </form>
                 </div>
               </div>

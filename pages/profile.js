@@ -74,7 +74,6 @@ export default function Profile() {
               {member.lastname}
             </p>
           </div>
-
           <div className=" h-0.5 bg-gray-400"></div>
           <div className="grid grid-cols-2">
             <p className="col-span-1 font-bold italic pl-2 py-3">Tel</p>
